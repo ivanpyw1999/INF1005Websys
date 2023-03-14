@@ -41,7 +41,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
 
         <main class ="container">
-            
+            <p>About Us</p>
         </main>
 
 
