@@ -54,7 +54,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                 <div>
                                                     <img
                                                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                                        class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                                        class="img-fluid rounded-3" alt="Shopping item" style="width: 65px; margin-right: 5px">
                                                 </div>
                                                 <div class="ms-3">
                                                     <h5>Iphone 11 pro</h5>
@@ -129,16 +129,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <hr style="height:1px;border:none;color:#333;background-color:#333;">
 
                                     <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="typeName">Cardholder's Name</label>
-                                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                                               placeholder="Cardholder's Name" />
+                                        <label class="form-label" for="typeName">CARD NUMBER</label>
+                                        <input type="text" id="typeName" class="form-control form-control-sm" size="5"
+                                               placeholder="CARD NUMBER" />
 
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="typeText">Card Number</label>
-                                        <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                                               placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                                        <label class="form-label" for="typeText">NAME ON CARD</label>
+                                        <input type="text" id="typeText" class="form-control form-control-sm" size="5"
+                                               placeholder="NAME" minlength="19" maxlength="19" />
 
                                     </div>
 
@@ -146,8 +146,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         <div class="col-md-6">
                                             <div class="form-outline form-white">
                                                 <label class="form-label" for="typeExp">Expiration</label>
-                                                <input type="text" id="typeExp" class="form-control form-control-lg"
-                                                       placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
+                                                <input type="text" id="typeExp" class="form-control form-control-sm"
+                                                       placeholder="MM/YYYY" size="5" id="exp" minlength="7" maxlength="7" />
 
                                             </div>
                                         </div>
@@ -155,8 +155,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         <div class="col-md-6">
                                             <div class="form-outline form-white">
                                                 <label class="form-label" for="typeText">CVV</label>
-                                                <input type="password" id="typeText" class="form-control form-control-lg"
-                                                       placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                                                <input type="password" id="typeText" class="form-control form-control-sm"
+                                                       placeholder="&#9679;&#9679;&#9679;" size="5" minlength="3" maxlength="3" />
 
                                             </div>
                                         </div>
