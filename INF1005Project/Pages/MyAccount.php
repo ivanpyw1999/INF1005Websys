@@ -1,3 +1,136 @@
+<?php 
+$username = $fname = $lname = $email = $street = $blk = $unit = $city = $postal = "";
+
+if(!empty($_GET["errorMsgPassword"])) echo "<script> alert('".$_GET['errorMsgPassword']."')</script>";
+
+
+// button clicked functions
+if(isset($_REQUEST["personal-information-edit-button"])) {
+    global $username, $fname, $lname, $emai, $success, $errorMsg;
+    $success = true;
+    $errorMsg = "";
+    
+    if (empty($_POST["email"])) {
+        $errorMsg .= "Email is required.<br>";
+        $success = false;
+        
+        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg);
+    }
+    if (empty($_POST["fname"])) {
+        $errorMsg .= "First Name is required.<br>";
+        $success = false;
+        
+        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg);
+    }
+    if (empty($_POST["lname"])) {
+        $errorMsg .= "Last Name is required.<br>";
+        $success = false;
+        
+        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg);
+    }
+    
+    if ($success) {
+        // Database
+        $errorMsg = $_POST["fname"]." ".$_POST["lname"]." ".$_POST["email"];
+        // reload page to display new information
+        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg); //remove errorMSg 
+    }
+}
+
+if(isset($_REQUEST["delivery-location-edit-button"])) {
+    global $success, $errorMsg;
+    $success = true;
+    $errorMsg = "";
+    
+    if (empty($_POST["street"])) {
+        $errorMsg .= "Street is required.<br>";
+        $success = false;
+        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
+    }
+    if (empty($_POST["blk"])) {
+        $errorMsg .= "Block is required.<br>";
+        $success = false;
+        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
+    }
+    if (empty($_POST["unit"])) {
+        $errorMsg .= "Unit is required.<br>";
+        $success = false;
+        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
+    }
+    if (empty($_POST["city"])) {
+        $errorMsg .= "City is required.<br>";
+        $success = false;
+        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
+    }
+    if (empty($_POST["postal"])) {
+        $errorMsg .= "Postal is required.<br>";
+        $success = false;
+        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
+    }
+    
+    if ($success) {
+        // Database
+        $errorMsg = $_POST["street"]." ".$_POST["blk"]." ".$_POST["unit"]." ".$_POST["city"]." ".$_POST["postal"];
+        // reload page to display new information
+        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg); //remove errorMSg 
+    }
+}
+
+if(isset($_REQUEST["change-password-check-button"])) {
+    global $username, $fname, $lname, $emai, $success, $errorMsg;
+    $success = true;
+    $errorMsg = "";
+    
+    if (empty($_POST["pwd"])) {
+        $errorMsg .= "Password is required.<br>";
+        $success = false;
+        
+    }
+    
+    if ($success) {
+        // Database
+        // Check if password is correct
+        // if correct update password
+         header("Location: ../Pages/MyAccount.php?errorMsgPassword=Successfully Changed Password !"); //remove errorMSg 
+        // if not correct
+//        header("Location: ../Pages/MyAccount.php?errorMsgPassword=Password die"); //remove errorMSg 
+    }
+}
+
+// temp Read User Table Function
+function TempReadUserInfo() { // used by div Personal-Information-View & Personal-Information-Edit
+    global $username, $fname, $lname, $email;
+    
+    // replace with SQL crap
+    $result = array(    "username" => "SitiDenver",
+                        "fname" => "Siti",
+                        "lname"=> "Denver",
+                        "email" => "email@gmail.com");
+    
+    $username = $result['username'];
+    $fname = $result['fname'];
+    $lname = $result['lname'];
+    $email = $result['email'];
+}
+
+function TempReadDeliveryInfo() { // used by div Delivery-Location-View & Delivery-Location-Edit
+    global $street, $blk, $unit, $city, $postal;
+    
+        // replace with SQL crap
+    $result = array(    "street" => "Dover Street",
+                        "blk" => "10",
+                        "unit" => "4-20",
+                        "city"=> "Singapore",
+                        "postal" => "529863");
+    
+    $street = $result['street'];
+    $blk = $result['blk'];
+    $unit = $result['unit'];
+    $city = $result['city'];
+    $postal = $result['postal'];
+}
+    
+?>
 
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -63,6 +196,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             </div>
 <!--Personal-Information-View-->
                             <div id="personal-information-view">
+                                <?php TempReadUserInfo() ?>
                                 <div class="row">
                                     <div class="col align-self-center">
                                         PERSONAL INFORMATION
@@ -76,11 +210,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <!--Usename Display-->
                                     <div class="col-12 col-md-8">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="bday_label">Username</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="bday_label">altex</label>
+                                                <label id="bday_label"><?php echo $username ?></label>
                                             </div>
                                         </div>
                                     </div>
@@ -90,22 +224,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <!--First Name-->
                                     <div class="col-12 col-md-4">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="fname_label">First Name</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="fname_label">Siti</label>
+                                                <label id="fname_label"><?php echo $fname ?></label>
                                             </div>
                                         </div>
                                     </div>
                                     <!--Last  Name-->
                                     <div class="col-12 col-md-4">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="lname_label">Last Name</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="lname_label">Denver</label>
+                                                <label id="lname_label"><?php echo $lname ?></label>
                                             </div>
                                         </div>
                                     </div>
@@ -115,75 +249,86 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <!--Email Display-->
                                     <div class="col-12 col-md-8">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="bday_label">Email</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="bday_label">2202487@gmail.com</label>
+                                                <label id="bday_label"><?php echo $email ?></label>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <!--Error Display-->
+                                    <div class="col-12 col-md-8">
+                                        <?php if(!empty($_GET["errorMsgPersonal"])) echo "<div class='alert alert-danger'>".$_GET['errorMsgPersonal']."</div>"; ?>
                                     </div>
                                 </div>
                                 <br/>
                             </div>
 <!--Personal-Information-Edit-->
                             <div id="personal-information-edit" class="d-none">
-                                <div class="row">
-                                    <div class="col align-self-center">
-                                        PERSONAL INFORMATION
+                                <?php TempReadUserInfo() ?>
+                                
+                                <form action="#" method="POST" >
+                                    <div class="row">
+                                        <div class="col align-self-center">
+                                            PERSONAL INFORMATION
+                                        </div>
+                                        <div class="col text-right">
+                                            <button id="personal-information-edit-button" name="personal-information-edit-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Save</button>
+                                        </div>
                                     </div>
-                                    <div class="col text-right">
-                                        <button id="personal-information-edit-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Save</button>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <div class="row justify-content-center">
-                                    <!--Usename Display-->
-                                    <div class="col-12 col-md-8">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
-                                                <label for="bday_label">Username</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="bday_label">altex</label>
+                                    <hr/>
+                                    <div class="row justify-content-center">
+                                        <!--Usename Display-->
+                                        <div class="col-12 col-md-8">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12 font-weight-bold">
+                                                    <label for="username_label">Username</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <label id="username_label"><?php echo $username ?></label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br/>
-                                <div class="row justify-content-center">
-                                    <!--First Name-->
-                                    <div class="col-12 col-md-4">
+                                    <br/>
+                                    <div class="row justify-content-center">
                                         <!--First Name-->
-                                        <div class="form-group">
-                                            <label for="fname">First Name</label>
-                                            <input class="form-control" type="text" id="fname" name="fname"
-                                                   required maxlenth="45" placeholder="First name">
+                                        <div class="col-12 col-md-4">
+                                            <!--First Name-->
+                                            <div class="form-group ">
+                                                <label class="font-weight-bold" for="fname">First Name</label>
+                                                <input class="form-control" type="text" id="fname" name="fname"
+                                                       required maxlenth="45" placeholder="First name" value="<?php echo $fname ?>">
+                                            </div>
+                                        </div>
+                                        <!--Last Name-->
+                                        <div class="col-12 col-md-4">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold" for="lname">Last Name</label>
+                                                <input class="form-control" type="text" id="lname" name="lname"
+                                                       required maxlenth="45" placeholder="Last name" value="<?php echo $lname ?>">
+                                            </div>
                                         </div>
                                     </div>
-                                    <!--Last Name-->
-                                    <div class="col-12 col-md-4">
-                                        <div class="form-group">
-                                            <label for="lname">Last Name</label>
-                                            <input class="form-control" type="text" id="lname" name="lname"
-                                                   required maxlenth="45" placeholder="Last name">
+                                    <div class="row justify-content-center">
+                                        <!--Email-->
+                                        <div class="col-12 col-md-8">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold" for="email">Email</label>
+                                                <input class="form-control" type="email" id="email" name="email"
+                                                       required maxlenth="45" placeholder="Email" value="<?php echo $email ?>">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <!--Email-->
-                                    <div class="col-12 col-md-8">
-                                        <div class="form-group">
-                                            <label for="bday">Email</label>
-                                            <input class="form-control" type="email" id="email" name="email"
-                                                   required maxlenth="45" placeholder="Email">
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
                                 <br/>
                             </div>
 <!--Delivery Location View-->
                             <div id="delivery-location-view">
+                                <?php TempReadDeliveryInfo() ?>
                                 <div class="row">
                                     <div class="col align-self-center">
                                         DELIVERY ADDRESS
@@ -197,11 +342,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <!--Address-->
                                     <div class="col-12 col-md-8">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="street_label">Street</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="street_label">10 Dover Dr</label>
+                                                <label id="street_label"><?php echo $street ?></label>
                                             </div>
                                         </div>
                                     </div>
@@ -210,22 +355,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <!--Blk-->
                                     <div class="col-12 col-md-4">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="blk_label">Block</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="blk_label">256</label>
+                                                <label id="blk_label"><?php echo $blk ?></label>
                                             </div>
                                         </div>
                                     </div>
                                     <!--Unit-->
                                     <div class="col-12 col-md-4">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="unit_label">Unit</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="unit_label">#420</label>
+                                                <label id="unit_label"><?php echo $unit ?></label>
                                             </div>
                                         </div>
                                     </div>
@@ -234,35 +379,42 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <!--Postal-->
                                     <div class="col-12 col-md-4">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="city_label">City</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="city_label">Singapore</label>
+                                                <label id="city_label"><?php echo $city ?></label>
                                             </div>
                                         </div>
                                     </div>
                                     <!--City-->
                                     <div class="col-12 col-md-4">
                                         <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col-5 col-md-12 font-weight-bold">
                                                 <label for="postal_label">Postal</label>
                                             </div>
                                             <div class="col-6 col-md-12">
-                                                <label id="postal_label">529863</label>
+                                                <label id="postal_label"><?php echo $postal ?></label>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <!--Error Display-->
+                                    <div class="col-12 col-md-8">
+                                        <?php if(!empty($_GET["errorMsgDelivery"])) echo "<div class='alert alert-danger'>".$_GET['errorMsgDelivery']."</div>"; ?>
                                     </div>
                                 </div>
                             </div>
 <!--Delivery Location Edit-->
                             <div id="delivery-location-edit" class="d-none">
+                                <form action="#" method="POST" >
                                 <div class="row">
                                     <div class="col align-self-center">
                                         DELIVERY ADDRESS
                                     </div>
                                     <div class="col text-right">
-                                        <button id="delivery-location-edit-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Save</button>
+                                        <button id="delivery-location-edit-button" name="delivery-location-edit-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Save</button>
                                     </div>
                                 </div>
                                 <hr/>
@@ -270,9 +422,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <div class="col-12 col-md-8">
                                         <!--Street-->
                                         <div class="form-group">
-                                            <label for="address">Street</label>
+                                            <label class="font-weight-bold" for="address">Street</label>
                                             <input class="form-control" type="text" id="street" name="street"
-                                                   required maxlenth="45" placeholder="Street">
+                                                   required maxlenth="45" placeholder="Street" value="<?php echo $street ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -280,17 +432,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <div class="col-12 col-md-4">
                                         <!--Blk-->
                                         <div class="form-group">
-                                            <label for="city">Block</label>
+                                            <label class="font-weight-bold" for="city">Block</label>
                                             <input class="form-control" type="text" id="blk" name="blk"
-                                                   required maxlenth="45" placeholder="Block">
+                                                   required maxlenth="45" placeholder="Block" value="<?php echo $blk ?>">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-4">
                                         <!--Unit-->
                                         <div class="form-group">
-                                            <label for="country">Unit</label>
+                                            <label class="font-weight-bold" for="country">Unit</label>
                                             <input class="form-control" type="text" id="unit" name="unit"
-                                                   required maxlenth="45" placeholder="Unit">
+                                                   required maxlenth="45" placeholder="Unit" value="<?php echo $unit ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -298,22 +450,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <div class="col-12 col-md-4">
                                         <!--City-->
                                         <div class="form-group">
-                                            <label for="city">City</label>
+                                            <label class="font-weight-bold" for="city">City</label>
                                             <input class="form-control" type="text" id="city" name="city"
-                                                   required maxlenth="45" placeholder="City">
+                                                   required maxlenth="45" placeholder="City" value="<?php echo $city ?>">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-4">
                                         <!--Postal-->
                                         <div class="form-group">
-                                            <label for="country">Postal</label>
+                                            <label class="font-weight-bold" for="country">Postal</label>
                                             <input class="form-control" type="text" id="postal" name="postal"
-                                                   required maxlenth="45" placeholder="postal">
+                                                   required maxlenth="45" placeholder="postal" value="<?php echo $postal ?>">
                                         </div>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
+                        
 <!--Order History-->
                         <div class="tab-pane fade 50vh" id="order-history" role="tabpanel" aria-labelledby="order-history-tab">
                             <div id="order-history-view">
@@ -334,12 +488,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <div class="tab-pane fade" id="change-password" role="tabpanel" aria-labelledby="change-password-messages-tab">
 <!--Change Password Check-->
                             <div id="change-password-check">
+                                <form action="#" method="POST" >
                                 <div class="row">
                                     <div class="col align-self-center">
                                         <h3 class="fw-bold">Change Password</h3>
                                     </div>
                                     <div class="col text-right d-none d-md-block d-lg-block">
-                                        <button id="change-password-check-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Change Password</button>
+                                        <button id="change-password-check-button" name="change-password-check-button" class="btn btn-warning text-dark" onclick="">Change Password</button>
                                     </div>
                                 </div>
                                 <hr/>
@@ -353,23 +508,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col text-right d-block d-md-none d-lg-none">
-                                        <button id="change-password-check-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Change Password</button>
-                                    </div>
-                                </div>
-                            </div>
-<!--Chnage Password Edit-->
-                            <div id="change-password-edit" class="d-none">
-                                <div class="row">
-                                    <div class="col align-self-center">
-                                        <h3 class="fw-bold">Change Password</h3>
-                                    </div>
-                                    <div class="col text-right d-none d-md-block d-lg-block">
-                                        <button id="change-password-edit-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Save New Password</button>
-                                    </div>
-                                </div>
-                                <hr/>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4">
                                         <!--New Password Input-->
@@ -389,9 +527,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                                 <div class="row">
                                     <div class="col text-right d-block d-md-none d-lg-none">
-                                        <button id="change-password-check-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Change Password</button>
+                                        <button id="change-password-check-button" name="change-password-check-button" class="btn btn-warning text-dark" onclick="">Change Password</button>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
