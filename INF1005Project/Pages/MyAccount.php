@@ -161,7 +161,7 @@ function TempReadOrderList() {
                                             src="'.$order['photo'].'"
                                             class="img-fluid rounded-3" alt="Shopping item" style="width: 65px; margin-right: 5px">
                                         </div>
-                                        <div class="ms-3">
+                                        <div class="ms-3 px-2">
                                             <h5>'.$order['productName'].'</h5>
                                             <p class="small mb-0">'.$order['productDescription'].'</p>
                                          </div>
