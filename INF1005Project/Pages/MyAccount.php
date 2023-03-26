@@ -4,6 +4,7 @@ $username = $fname = $lname = $email = $street = $blk = $unit = $city = $postal 
 if(!empty($_GET["errorMsgPassword"])) echo "<script> alert('".$_GET['errorMsgPassword']."')</script>";
 
 
+
 // button clicked functions
 if(isset($_REQUEST["personal-information-edit-button"])) {
     global $username, $fname, $lname, $emai, $success, $errorMsg;
@@ -33,7 +34,8 @@ if(isset($_REQUEST["personal-information-edit-button"])) {
         // Database
         $errorMsg = $_POST["fname"]." ".$_POST["lname"]." ".$_POST["email"];
         // reload page to display new information
-        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg); //remove errorMSg 
+        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg); //temp - remove
+        //        header("Location: ../Pages/MyAccount.php");
     }
 }
 
@@ -72,7 +74,8 @@ if(isset($_REQUEST["delivery-location-edit-button"])) {
         // Database
         $errorMsg = $_POST["street"]." ".$_POST["blk"]." ".$_POST["unit"]." ".$_POST["city"]." ".$_POST["postal"];
         // reload page to display new information
-        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg); //remove errorMSg 
+        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg); //temp - remove 
+//        header("Location: ../Pages/MyAccount.php");
     }
 }
 
@@ -91,9 +94,9 @@ if(isset($_REQUEST["change-password-check-button"])) {
         // Database
         // Check if password is correct
         // if correct update password
-         header("Location: ../Pages/MyAccount.php?errorMsgPassword=Successfully Changed Password !"); //remove errorMSg 
+         header("Location: ../Pages/MyAccount.php?errorMsgPassword=Successfully Changed Password !");
         // if not correct
-//        header("Location: ../Pages/MyAccount.php?errorMsgPassword=Password die"); //remove errorMSg 
+//        header("Location: ../Pages/MyAccount.php?errorMsgPassword=" . $errorMsg); //remove errorMSg 
     }
 }
 
@@ -128,6 +131,56 @@ function TempReadDeliveryInfo() { // used by div Delivery-Location-View & Delive
     $unit = $result['unit'];
     $city = $result['city'];
     $postal = $result['postal'];
+}
+
+function TempReadOrderList() {
+    
+    // test data - replace with sql
+    $result = array(array(  "productID" => "1",
+                            "productName" => "Button Up Shirt",
+                            "productDescription" => "XS, Navy Blue",
+                            "amt"=>2,
+                            "subtotal" => 59.80,
+                            "photo" => "https://img.freepik.com/free-photo/man-navy-jacket-shorts-streetwear_53876-102182.jpg?w=826&t=st=1679844960~exp=1679845560~hmac=9250c11ea1c2c88691a554f8957db7333130371958cc314569cdab97bd299252"),
+                    array(  "productID" => "2",
+                            "productName" => "Oversized Sweater",
+                            "productDescription" => "M, Black",
+                            "amt"=>1,
+                            "subtotal" => 24.90,
+                            "photo" => "https://img.freepik.com/free-photo/man-black-sweater-black-bucket-hat-youth-apparel-shoot_53876-102294.jpg?w=740&t=st=1679846421~exp=1679847021~hmac=02692611e7ba1d7e85506282babae17b4bf52ba4ee599d064473611756f1d801"));
+
+    foreach( $result as $order )  { // test data - iterate through results
+        echo '<div class="row">
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div>
+                                        <img
+                                            src="'.$order['photo'].'"
+                                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px; margin-right: 5px">
+                                        </div>
+                                        <div class="ms-3">
+                                            <h5>'.$order['productName'].'</h5>
+                                            <p class="small mb-0">'.$order['productDescription'].'</p>
+                                         </div>
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div style="width: 50px;">
+                                            <h5 class="fw-normal mb-0">'.$order['amt'].'</h5>
+                                        </div>
+                                    <div style="width: 80px;">
+                                        <h5 class="mb-0">$'.$order['subtotal'].'</h5>
+                                    </div>
+                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+    }
 }
     
 ?>
@@ -477,11 +530,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>
                                 </div>
                                 <hr/>
-                                <div class="row">
-                                    <div class="col">
-                                        Orders
-                                    </div>
-                                </div>
+                                <br/>
+                                <?php TempReadOrderList(); ?>
                             </div>
                         </div>
 <!--Change Password-->
