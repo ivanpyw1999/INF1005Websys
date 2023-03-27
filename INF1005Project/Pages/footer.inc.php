@@ -5,11 +5,11 @@
         <div class="row mt-4">
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">See other books</h5>
+                <h5 class="text-uppercase">Reach out to us</h5>
 
                 <ul class="list-unstyled mb-0">
                     <li>
-                        <a href="#!" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>Bestsellers</a>
+                        <a href="ContactUs.php" class="text-white"></i>Contact Us</a>
                     </li>
 
                 </ul>
@@ -18,11 +18,11 @@
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Execution of the contract</h5>
+                <h5 class="text-uppercase">Find out more</h5>
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Supply</a>
+                        <a href="AboutUs.php" class="text-white">About us</a>
                     </li>
 
                 </ul>
@@ -48,7 +48,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>Help in purchasing</a>
+                        <a href="#!" class="text-white">Help in purchasing</a>
                     </li>
 
                 </ul>

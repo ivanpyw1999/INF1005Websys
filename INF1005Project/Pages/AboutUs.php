@@ -27,6 +27,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </script>
         <!-- Custom JS -->
         <script defer src="js/main.js"></script>
+        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 
         <title>FastFash</title>
         <meta charset="UTF-8">
@@ -82,13 +83,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <!-- Team item-->
                         <div class="col-xl-4 col-sm-4 mb-4">
                             <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-4.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                                <h5 class="mb-0">Ivan Phua You Wen</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                                <ul class="social mb-0 list-inline mt-3">
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
+                                <h5 class="mb-0">Ivan Phua</h5><span class="small text-uppercase text-muted">Frontend Developer</span>
+                                
                             </div>
                         </div>
                         <!-- End-->
@@ -96,13 +92,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <!-- Team item-->
                         <div class="col-xl-4 col-sm-4 mb-4">
                             <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                                <h5 class="mb-0">Megan</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                                <ul class="social mb-0 list-inline mt-3">
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
+                                <h5 class="mb-0">Megan</h5><span class="small text-uppercase text-muted">Frontend Developer</span>
+                               
                             </div>
                         </div>
 
@@ -112,13 +103,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <!-- Team item-->
                         <div class="col-xl-4 col-sm-4 mb-4">
                             <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                                <h5 class="mb-0">Ethan</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                                <ul class="social mb-0 list-inline mt-3">
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
+                                <h5 class="mb-0">Alyssa</h5><span class="small text-uppercase text-muted">Frontend Developer</span>
+                                
                             </div>
                         </div>
                         <!-- End-->
@@ -134,25 +120,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <!-- Team item-->
                         <div class="col-xl-6 col-sm-6 mb-6">
                             <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                                <h5 class="mb-0">Choon Hong</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                                <ul class="social mb-0 list-inline mt-3">
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
+                                <h5 class="mb-0">Choon Hong</h5><span class="small text-uppercase text-muted">Backend Developer</span>
+                                
                             </div>
                         </div>
 
                         <div class="col-xl-6 col-sm-6 mb-6"">
                             <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                                <h5 class="mb-0">Alyssa</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                                <ul class="social mb-0 list-inline mt-3">
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
+                                <h5 class="mb-0">Ethan</h5><span class="small text-uppercase text-muted">Backend Developer</span>
                             </div>
                         </div>
                         <!-- End-->
