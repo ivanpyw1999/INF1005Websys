@@ -1,9 +1,84 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : 27 Mar 2023, 9:25:52 pm
-    Author     : fjtpn
-*/
 
+.productlistmain{
+    height: 100%;
+    width: 100vw;
+}
+
+.productlistdiv{
+    display: flex;
+    height: 100%;
+    width: 100vw;
+}
+
+.productbodydiv{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.productfilterdiv{
+    min-width: 20rem;
+    width: 30%;
+    background-color: #d5c7f3;
+    
+}
+
+.searchfilterdiv{
+
+}
+
+
+.searchinputdiv{
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.searchbtndiv{
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.searchfilterform{
+    padding: 1rem;
+}
+
+.productlistdiv{
+    width: 70%;
+}
+
+.filtersdiv{
+    padding: 2rem;
+    padding-top: 1rem;
+}
+
+.filtercatdiv{
+    
+}
+
+.filtercattxtdiv{
+    margin:0;
+}
+
+.filtercattxt{
+    margin:0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.filtercatcheckdiv{
+    
+}
+
+.filtercatcheck{
+    
+}
+
+.filtercatoptiondiv{
+    display: flex;
+}
+
+.filtercatoption{
+    
+}
