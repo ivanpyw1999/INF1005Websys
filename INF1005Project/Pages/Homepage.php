@@ -12,6 +12,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="../css/homepage.css">
 
         <!--jQuery-->
         <script defer
@@ -26,8 +27,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script defer src="js/main.js"></script>
-
+        <script defer src="../js/main.js"></script>
+        <script defer src="../js/homepage.js"></script>
+       
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <title>FastFash</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,9 +41,156 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         include "nav.inc.php";
         ?>
 
+        <main class="homepage" id='homepage'>
+            <div class='homepagediv' id='homepagediv'>
+                
+                <!-- This is the wrapper-->
+                <div class="homeaddiv">
+                    <div class="adcarouselbtndiv" id="adleft">
+                        <i class="bi bi-arrow-left-short adcarouselbtn" ></i>
+                    </div>
+                    
+                    <!-- This is the slideshow carousel-->
+                    <div class="homeadcarousel" id="homeadcarousel">
+                        <!-- Can add div later-->
+                        <img src="../Images/homeadvertv2small.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertv2small.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
+                        
+                    </div>
+                    <div class="adcarouselbtndiv" id="adright">
+                        <i class="bi bi-arrow-right-short adcarouselbtn" ></i>
+                    </div>
+                    
+              
+                </div>
+                
+                
+                <div class="homecatsdiv">
+                    
+                    <div class='homecatheaderdiv'>
+                        
+                        <div class="homecatheader">
+                            <p class="homecattitle">CATEGORIES</p>
+                        </div>
+                        
+                        <div class="homecatbtndiv">
+                            <a class="homecatbtn" href="../Pages/Products.php">View All Categories</a>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="homecategorywrapper">
+
+                        <div class="catcarouselbtndiv" id="catleft">
+                            <i class="bi bi-arrow-left-short catcarouselbtn" ></i>
+                        </div>
+
+                        <!-- This is the slideshow carousel-->
+                        <div class="homecatcarousel" id="homecatcarousel">
+                            <!-- Can add div later-->
+
+                            <div class='homecatdiv'>
+                                <div class="homecatimgdiv">
+                                        <img src="../Images/categories/pinktop.png" alt="Advertisement" class="homecatimg">
+                                </div>
+
+                                <div class="homecattxtdiv">
+                                    <p class="homecattxt">
+                                        TOP
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class='homecatdiv'>
+                                <div class="homecatimgdiv">
+                                        <img src="../Images/categories/pantsfront.png" alt="Advertisement" class="homecatimg">
+                                </div>
+
+                                <div class="homecattxtdiv">
+                                    <p class="homecattxt">
+                                        BOTTOM
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class='homecatdiv'>
+                                <div class="homecatimgdiv">
+                                        <img src="../Images/categories/jeansfront.png" alt="Advertisement" class="homecatimg">
+                                </div>
+
+                                <div class="homecattxtdiv">
+                                    <p class="homecattxt">
+                                        JEANS
+                                    </p>
+                                </div>
+
+                            </div>
 
 
-        <main class ="container">
+                            <div class='homecatdiv'>
+                                <div class="homecatimgdiv">
+                                        <img src="../Images/categories/dressfront.png" alt="Advertisement" class="homecatimg">
+                                </div>
+
+                                <div class="homecattxtdiv">
+                                    <p class="homecattxt">
+                                        DRESSES
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class='homecatdiv'>
+                                <div class="homecatimgdiv">
+                                        <img src="../Images/categories/jacket.png" alt="Advertisement" class="homecatimg">
+                                </div>
+
+                                <div class="homecattxtdiv">
+                                    <p class="homecattxt">
+                                        OUTERWEAR
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class='homecatdiv'>
+                                <div class="homecatimgdiv">
+                                        <img src="../Images/categories/nikeshoe.png" alt="Advertisement" class="homecatimg">
+                                </div>
+
+                                <div class="homecattxtdiv">
+                                    <p class="homecattxt">
+                                       SHOES
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        </div> 
+
+                        <div class="catcarouselbtndiv" id="catright">
+                            <i class="bi bi-arrow-right-short catcarouselbtn" ></i>
+                        </div>
+
+                        
+
+                </div>
+                
+            </div>
             
         </main>
 
