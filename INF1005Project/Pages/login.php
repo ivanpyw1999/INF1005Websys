@@ -11,8 +11,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
-
-        <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/accountPages.css">
 
         <!--        jQuery

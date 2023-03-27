@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
+
 <html lang="en">
     <head>
         <link rel="stylesheet"
@@ -11,7 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="../css/SpecificProductPage.css">
 
         <!--jQuery-->
         <script defer
@@ -26,26 +23,40 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script defer src="js/main.js"></script>
+        <script defer src="../js/specificproduct.js"></script>
 
         <title>FastFash</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body>
+    <body class = "d-flex flex-column min-vh-100">
         <?php
         include "nav.inc.php";
         ?>
+        <main class="container">
 
 
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bolder">Product Name</h1>
+                        <div class="fs-5 mb-5">
 
-        <main class ="container">
-            
+                            <span id="specific_price">Price Tag</span>
+                        </div>
+                        <p class="lead">This is where the description of product should be</p>
+                        <div class="d-flex">
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
-
-
-
         <?php
         include "footer.inc.php";
         ?>
