@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html lang="en">
     <head>
         <link rel="stylesheet"
@@ -11,8 +7,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
-        <link rel="stylesheet" href="css/main.css"/>
-        <link rel="stylesheet" href="css/ShoppingCart.css">
+        <link rel="stylesheet" href="../css/footer.css">
 
         <!--jQuery-->
         <script defer
@@ -53,20 +48,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             <div class="d-flex flex-row align-items-center">
                                                 <div>
                                                     <img
-                                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                                                        src="../Images/FashionLogo.png"
                                                         class="img-fluid rounded-3" alt="Shopping item" style="width: 65px; margin-right: 5px">
                                                 </div>
                                                 <div class="ms-3">
-                                                    <h5>Iphone 11 pro</h5>
-                                                    <p class="small mb-0">256GB, Navy Blue</p>
+                                                    <h5>Product Name</h5>
                                                 </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center">
-                                                <div style="width: 50px;">
-                                                    <h5 class="fw-normal mb-0">2</h5>
-                                                </div>
+
                                                 <div style="width: 80px;">
-                                                    <h5 class="mb-0">$900</h5>
+                                                    <h5 class="mb-0">Price</h5>
                                                 </div>
                                                 <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                                             </div>
