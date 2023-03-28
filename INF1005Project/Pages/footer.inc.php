@@ -4,7 +4,7 @@
         <!--Grid row-->
         <div class="row mt-4">
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h5 class="text-uppercase">Reach out to us</h5>
 
                 <ul class="list-unstyled mb-0">
@@ -17,7 +17,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h5 class="text-uppercase">Find out more</h5>
 
                 <ul class="list-unstyled">
@@ -30,7 +30,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h5 class="text-uppercase">Publishing house</h5>
 
                 <ul class="list-unstyled">
@@ -42,27 +42,13 @@
             </div>
             <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Write to us</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!" class="text-white">Help in purchasing</a>
-                    </li>
-
-                </ul>
-            </div>
-            <!--Grid column-->
+          
         </div>
         <!--Grid row-->
+        © 2021 Copyright:
+        <a class="text-center">FastFash.com</a>
     </div>
     <!-- Grid container -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2021 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">FastFash.com</a>
-    </div>
-    <!-- Copyright -->
+
 </footer>

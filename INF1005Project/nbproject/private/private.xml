@@ -3,10 +3,38 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/fjtpn/OneDrive/Documents/GitHub/INF1005Websys/INF1005Project/js/homepage.js</file>
             <file>file:/C:/Users/fjtpn/OneDrive/Documents/GitHub/INF1005Websys/INF1005Project/Pages/Products.php</file>
             <file>file:/C:/Users/fjtpn/OneDrive/Documents/GitHub/INF1005Websys/INF1005Project/css/homepage.css</file>
             <file>file:/C:/Users/fjtpn/OneDrive/Documents/GitHub/INF1005Websys/INF1005Project/Pages/Homepage.php</file>
+=======
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/js/main.js</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/MyAccount.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/process_ContactUs.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/css/ErrorHandling.css</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/js/specificproduct.js</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/process_search.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/js/ErrorHandling.js</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/process_login.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/css/AboutUs.css</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/order.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/nav.inc.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/SpecificProductPage.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/process_register.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/register.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/Homepage.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/ContactUs.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/login.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/process_createorder.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/process_specificproduct.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/ErrorHandling.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/ShoppingCart.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/AboutUs.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/css/SpecificProductPage.css</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/Pages/footer.inc.php</file>
+            <file>file:/C:/UNI/PROJECTS/NetBean/INF1005WebsysProj/INF1005Project/processes/products.php</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

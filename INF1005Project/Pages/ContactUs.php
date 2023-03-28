@@ -112,7 +112,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </form>
 
                         <div class="text-center text-md-left" style="padding-top: 5%">
-                            <button type="button" class="btn btn-dark" onclick = "document.getElementById('contact-form').submit()">Submit</button>
+                            <button type="button" class="btn btn-dark">Submit</button>
                         </div>
                         <div class="status"></div>
                     </div>
