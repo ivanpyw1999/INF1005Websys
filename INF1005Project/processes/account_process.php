@@ -1,3 +1,7 @@
+<?php
+session_start();
+$user_id = $_SESSION["member-id"];
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,7 +15,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
-        <link rel="stylesheet" href="../css/main.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/ShoppingCart.css">
 
         <!--jQuery-->
         <script defer
@@ -26,7 +31,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script defer src="../js/main.js"></script>
+        <script defer src="js/main.js"></script>
 
         <title>FastFash</title>
         <meta charset="UTF-8">
@@ -34,7 +39,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
 <body>
     <?php
-    include "nav.inc.php";
+    include "../Pages/nav.inc.php";
     ?>
     <main class="container">
         <?php
@@ -42,10 +47,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         $fname = $errorMsg = "";
         $lname = $errorMsg = "";
         $user_name = $errorMsg = "";
-        $pwd = $_POST["pwd"];
-        $pwdconf = $_POST["pwd_confirm"];
-        $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
-
         $success = true;
         if (empty($_POST["email"])) {
             $errorMsg .= "Email is required.<br>";
@@ -56,17 +57,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         } if (empty($_POST["lname"])) {
             $errorMsg .= "Last name is required.<br>";
             $success = false;
-        } if (empty($_POST["pwd"])) {
-            $errorMsg .= "Password is required.<br>";
-            $success = false;
         } if (empty($_POST["username"])) {
             $errorMsg .= "Username is required.<br>";
-            $success = false;
-        } if (empty($_POST["pwd_confirm"])) {
-            $errorMsg .= "Please confirm your password.<br>";
-            $success = false;
-        } if ($pwd !== $pwdconf) {
-            $errorMsg .= "Password do not match.<br>";
             $success = false;
         } else {
             $email = sanitize_input($_POST["email"]);
@@ -86,22 +78,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             echo"<h1>Opps!</h1>";
             echo "<h4>The following input errors were detected:</h4>";
             echo "<p>" . $errorMsg . "</p>";
-            echo("<button  onclick=\"location.href='../Pages/register.php'\">Return to Sign-Up</button>");
+            echo("<button  onclick=\"location.href='../Pages/MyAccount.php'\">Return to Account page</button>");
         } else {
             saveMemberToDB();
             if (!$success) {
                 echo"<h1>Opps!</h1>";
                 echo "<h4>The following input errors were detected:</h4>";
                 echo "<p>" . $errorMsg . "</p>";
-                echo("<button  onclick=\"location.href='../Pages/register.php'\">Return to Sign-Up</button>");
+                echo("<button  onclick=\"location.href='../Pages/MyAccount.php'\">Return to Account page</button>");
         } else {
             echo"<h1>Yay!</h1>";
-            echo "<h4>Registration successful!</h4>";
+            echo "<h4>Update successful!</h4>";
             echo "<p>Username: " . $username . "</p>";
             echo "<p>First Name: " . $fname;
             echo "<p>Last Name: " . $lname;
             echo "<p>Email: " . $email . "</p>";
-          echo("<button  onclick=\"location.href='../Pages/Homepage.php'\">Back to Home</button>");
+            echo "<p>Note:You must LOG-OUT for changes to take effect</p>";
+            echo("<button  onclick=\"location.href='../Pages/logout.php'\">Log-OUT</button>");
         }
         }
 
@@ -114,7 +107,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
 
         function saveMemberToDB() {
-            global $fname, $lname, $email, $hashed_password, $errorMsg, $success, $username;
+            global $fname, $lname, $email, $errorMsg, $success, $username, $user_id;
 // Create database connection.
            $config = parse_ini_file('/var/www/private/db-config.ini');
            $conn = new mysqli($config['servername'], $config['username'],
@@ -125,10 +118,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 $success = false;
             } else {
 // Prepare the statement:
-                $stmt = $conn->prepare("INSERT INTO world_of_pets.users (fname, lname,
-email, password, username) VALUES (?, ?, ?, ?, ?)");
+                $stmt = $conn->prepare("UPDATE world_of_pets.users SET fname=?, lname=?, email=?, username=? WHERE member_id=?");
 // Bind & execute the query statement:
-                $stmt->bind_param("sssss", $fname, $lname, $email, $hashed_password, $username);
+$stmt->bind_param("sssss", $fname, $lname, $email, $username,$user_id);
                 if (!$stmt->execute()) {
                     $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
                     $success = false;
