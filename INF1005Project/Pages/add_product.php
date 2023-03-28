@@ -10,12 +10,6 @@ $category = $_POST['category'];
 $stock = $_POST['stock'];
 $description = $_POST['description'];
 
-// Connect to the database
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "world_of_pets";
-
 
 // Check for errors
 if ($conn->connect_error) {
