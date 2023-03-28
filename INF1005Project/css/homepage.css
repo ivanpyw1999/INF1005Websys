@@ -51,16 +51,23 @@ body{
 .homecatsdiv{
     width: 100%;
     padding-top: 4rem;
-    
+    display: flex;
+    flex-direction: column;
 }
+
+.homeaddiv, .homeadcarousel{
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 
 .homeaddiv, .homeadcarousel, .homecatsdiv, .homecatcarousel{
     font-size: 0rem;
     cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
+
     width: 100%
 }
+
 
 .homecatheaderdiv{
     display: flex;
@@ -99,6 +106,7 @@ body{
 
 .homecategorywrapper{
     width: 100%;
+    display: flex;
 }
 
 .homecategories{

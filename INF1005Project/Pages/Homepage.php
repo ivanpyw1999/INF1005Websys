@@ -44,7 +44,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         ?>
 
         <main class="homepage" id='homepage'>
-            <div class='homepagediv' id='homepagediv'>
+            <div class='homepagediv vh-100' id='homepagediv'>
                 
                 <!-- This is the wrapper-->
                 <div class="homeaddiv">
@@ -98,7 +98,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
 
                         <!-- This is the slideshow carousel-->
-                        <div class="homecatcarousel" id="homecatcarousel">
+                        <div class="homecatcarousel d-flex" id="homecatcarousel">
                             <!-- Can add div later-->
 
                             <div class='homecatdiv'>
