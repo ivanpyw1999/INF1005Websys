@@ -11,8 +11,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
-
-        <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/accountPages.css">
 
         <!--        jQuery
@@ -29,7 +27,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </script>
                  Custom JS 
                 <script defer src="js/main.js"></script>-->
+        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 
+        
         <title>FastFash</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

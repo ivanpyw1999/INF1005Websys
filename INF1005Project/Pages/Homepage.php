@@ -27,16 +27,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
+        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
         <script defer src="../js/main.js"></script>
         <script defer src="../js/homepage.js"></script>
        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
         <title>FastFash</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body>
+    <body class = "d-flex flex-column min-vh-100">
         <?php
         include "nav.inc.php";
         ?>
@@ -186,7 +188,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <i class="bi bi-arrow-right-short catcarouselbtn" ></i>
                         </div>
 
-                        
 
                 </div>
                 
