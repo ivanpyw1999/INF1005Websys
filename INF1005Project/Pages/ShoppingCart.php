@@ -23,6 +23,7 @@
         </script>
         <!-- Custom JS -->
         <script defer src="js/main.js"></script>
+        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 
         <title>FastFash</title>
         <meta charset="UTF-8">

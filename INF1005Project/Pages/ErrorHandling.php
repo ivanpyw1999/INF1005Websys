@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
 <html lang="en">
     <head>
         <link rel="stylesheet"
@@ -8,7 +11,7 @@
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
-        <link rel="stylesheet" href="../css/SpecificProductPage.css">
+        <link rel="stylesheet" href="../css/ErrorHandling.css">
 
         <!--jQuery-->
         <script defer
@@ -23,9 +26,8 @@
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script defer src="../js/specificproduct.js"></script>
+        <script defer src="../js/ErrorHandling.js"></script>
         <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
-
 
         <title>FastFash</title>
         <meta charset="UTF-8">
@@ -36,29 +38,22 @@
         <?php
         include "nav.inc.php";
         ?>
-        <main class="container">
 
 
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <h1 class="display-5 fw-bolder">Product Name</h1>
-                        <div class="fs-5 mb-5">
 
-                            <span id="specific_price">Price Tag</span>
-                        </div>
-                        <p class="lead">This is where the description of product should be</p>
-                        <div class="d-flex">
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Add to cart
-                            </button>
-                        </div>
+        <main class ="container">
+            <section class="centered">
+                <h1>500 Server Error</h1>
+                    <span class="message" id="js-whoops"></span> <span class="message" id="js-appears"></span> 
+                    <span class="message" id="js-error"></span> <span class="message" id="js-apology"></span>
+                    <div>
+                        <span class="hidden" id="js-hidden">Message Here</span>
                     </div>
-                </div>
-            </div>
+            </section>
         </main>
+
+
+
         <?php
         include "footer.inc.php";
         ?>
