@@ -59,6 +59,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                         
                         <div class="filtersdiv">
+                            
                             <div class="filtercatdiv">
                                 <div class="filtercattxtdiv">
                                     <p class="filtercattxt">Categories</p>
@@ -131,182 +132,230 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                                 
                             </div>
+                            
+                            <div class="filterbtndiv">
+                                <button class="filterbtn">
+                                    Apply
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="productlistdiv">
                         <div class="productheaderdiv">
                             <h1 class="productheader">Product List</h1>
                         </div>
-                        <div class="productlistwrapper">
+                        <div class="productlistwrapper d-flex flex-wrap">
                             
                             <div class="productcarddiv">
-                                <div class="productimgdiv">
-                                    <img src-="../Images/categories/stripedtop.png" class="productimg">
+                                <div class="productcard shadow">
+                                    <div class="productimgdiv">
+                                        <img src="../Images/categories/stripedtop.png" class="productimg">
+                                    </div>
+                                
+                                    <div class="productcardcontent">
+                                        <div class="productcardleft">
+                                            <div class="productnamediv">
+                                                <p class="productname">
+                                                    Striped Shirt
+                                                </p>
+                                            </div>
+
+                                            <div class="productcostdiv">
+                                                <p class="productcost">
+                                                    $7.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productcardright">
+                                            <div class="productsavebtndiv">
+                                                <input class="productsavebtn" type="checkbox" name="productsave">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class-="productcardcontent">
-                                    <div class="productcardleft">
-                                        <div class="productnamediv">
-                                            <p class="productname">
-                                                Striped Shirt
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="productcostdiv">
-                                            <p class="productcost">
-                                                $7.00
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="productcardright">
-                                        <div class="productsavebtndiv">
-                                            <input class="productsavebtn" type="checkbox" name="productsave">
-                                        </div>
-                                    </div>
-                                </div>
-    
                             </div>
                             
-                                                        <div class="productcarddiv">
-                                <div class="productimgdiv">
-                                    <img src-="../Images/categories/stripedtop.png" class="productimg">
+                            <div class="productcarddiv">
+                                <div class="productcard shadow">
+                                    <div class="productimgdiv">
+                                        <img src="../Images/categories/stripedtop.png" class="productimg">
+                                    </div>
+                                
+                                    <div class="productcardcontent">
+                                        <div class="productcardleft">
+                                            <div class="productnamediv">
+                                                <p class="productname">
+                                                    Striped Shirt
+                                                </p>
+                                            </div>
+
+                                            <div class="productcostdiv">
+                                                <p class="productcost">
+                                                    $7.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productcardright">
+                                            <div class="productsavebtndiv">
+                                                <input class="productsavebtn" type="checkbox" name="productsave">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class-="productcardcontent">
-                                    <div class="productcardleft">
-                                        <div class="productnamediv">
-                                            <p class="productname">
-                                                Striped Shirt
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="productcostdiv">
-                                            <p class="productcost">
-                                                $7.00
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="productcardright">
-                                        <div class="productsavebtndiv">
-                                            <input class="productsavebtn" type="checkbox" name="productsave">
-                                        </div>
-                                    </div>
-                                </div>
-    
                             </div>
                             
-                                                        <div class="productcarddiv">
-                                <div class="productimgdiv">
-                                    <img src-="../Images/categories/stripedtop.png" class="productimg">
+                            <div class="productcarddiv">
+                                <div class="productcard shadow">
+                                    <div class="productimgdiv">
+                                        <img src="../Images/categories/stripedtop.png" class="productimg">
+                                    </div>
+                                
+                                    <div class="productcardcontent">
+                                        <div class="productcardleft">
+                                            <div class="productnamediv">
+                                                <p class="productname">
+                                                    Striped Shirt
+                                                </p>
+                                            </div>
+
+                                            <div class="productcostdiv">
+                                                <p class="productcost">
+                                                    $7.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productcardright">
+                                            <div class="productsavebtndiv">
+                                                <input class="productsavebtn" type="checkbox" name="productsave">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class-="productcardcontent">
-                                    <div class="productcardleft">
-                                        <div class="productnamediv">
-                                            <p class="productname">
-                                                Striped Shirt
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="productcostdiv">
-                                            <p class="productcost">
-                                                $7.00
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="productcardright">
-                                        <div class="productsavebtndiv">
-                                            <input class="productsavebtn" type="checkbox" name="productsave">
-                                        </div>
-                                    </div>
-                                </div>
-    
                             </div>
                             
-                                                        <div class="productcarddiv">
-                                <div class="productimgdiv">
-                                    <img src-="../Images/categories/stripedtop.png" class="productimg">
+                            <div class="productcarddiv">
+                                <div class="productcard shadow">
+                                    <div class="productimgdiv">
+                                        <img src="../Images/categories/stripedtop.png" class="productimg">
+                                    </div>
+                                
+                                    <div class="productcardcontent">
+                                        <div class="productcardleft">
+                                            <div class="productnamediv">
+                                                <p class="productname">
+                                                    Striped Shirt
+                                                </p>
+                                            </div>
+
+                                            <div class="productcostdiv">
+                                                <p class="productcost">
+                                                    $7.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productcardright">
+                                            <div class="productsavebtndiv">
+                                                <input class="productsavebtn" type="checkbox" name="productsave">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class-="productcardcontent">
-                                    <div class="productcardleft">
-                                        <div class="productnamediv">
-                                            <p class="productname">
-                                                Striped Shirt
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="productcostdiv">
-                                            <p class="productcost">
-                                                $7.00
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="productcardright">
-                                        <div class="productsavebtndiv">
-                                            <input class="productsavebtn" type="checkbox" name="productsave">
-                                        </div>
-                                    </div>
-                                </div>
-    
                             </div>
                             
-                                                        <div class="productcarddiv">
-                                <div class="productimgdiv">
-                                    <img src-="../Images/categories/stripedtop.png" class="productimg">
+                            <div class="productcarddiv">
+                                <div class="productcard shadow">
+                                    <div class="productimgdiv">
+                                        <img src="../Images/categories/stripedtop.png" class="productimg">
+                                    </div>
+                                
+                                    <div class="productcardcontent">
+                                        <div class="productcardleft">
+                                            <div class="productnamediv">
+                                                <p class="productname">
+                                                    Striped Shirt
+                                                </p>
+                                            </div>
+
+                                            <div class="productcostdiv">
+                                                <p class="productcost">
+                                                    $7.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productcardright">
+                                            <div class="productsavebtndiv">
+                                                <input class="productsavebtn" type="checkbox" name="productsave">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class-="productcardcontent">
-                                    <div class="productcardleft">
-                                        <div class="productnamediv">
-                                            <p class="productname">
-                                                Striped Shirt
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="productcostdiv">
-                                            <p class="productcost">
-                                                $7.00
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="productcardright">
-                                        <div class="productsavebtndiv">
-                                            <input class="productsavebtn" type="checkbox" name="productsave">
-                                        </div>
-                                    </div>
-                                </div>
-    
                             </div>
                             
-                                                        <div class="productcarddiv">
-                                <div class="productimgdiv">
-                                    <img src-="../Images/categories/stripedtop.png" class="productimg">
+                            
+                            <div class="productcarddiv">
+                                <div class="productcard shadow">
+                                    <div class="productimgdiv">
+                                        <img src="../Images/categories/stripedtop.png" class="productimg">
+                                    </div>
+                                
+                                    <div class="productcardcontent">
+                                        <div class="productcardleft">
+                                            <div class="productnamediv">
+                                                <p class="productname">
+                                                    Striped Shirt
+                                                </p>
+                                            </div>
+
+                                            <div class="productcostdiv">
+                                                <p class="productcost">
+                                                    $7.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productcardright">
+                                            <div class="productsavebtndiv">
+                                                <input class="productsavebtn" type="checkbox" name="productsave">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class-="productcardcontent">
-                                    <div class="productcardleft">
-                                        <div class="productnamediv">
-                                            <p class="productname">
-                                                Striped Shirt
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="productcostdiv">
-                                            <p class="productcost">
-                                                $7.00
-                                            </p>
-                                        </div>
+                            </div>
+                            
+                            <div class="productcarddiv">
+                                <div class="productcard shadow">
+                                    <div class="productimgdiv">
+                                        <img src="../Images/categories/stripedtop.png" class="productimg">
                                     </div>
-                                    <div class="productcardright">
-                                        <div class="productsavebtndiv">
-                                            <input class="productsavebtn" type="checkbox" name="productsave">
+                                
+                                    <div class="productcardcontent">
+                                        <div class="productcardleft">
+                                            <div class="productnamediv">
+                                                <p class="productname">
+                                                    Striped Shirt
+                                                </p>
+                                            </div>
+
+                                            <div class="productcostdiv">
+                                                <p class="productcost">
+                                                    $7.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productcardright">
+                                            <div class="productsavebtndiv">
+                                                <input class="productsavebtn" type="checkbox" name="productsave">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-    
+                                
                             </div>
-                            
                             
                         </div>
                     </div>

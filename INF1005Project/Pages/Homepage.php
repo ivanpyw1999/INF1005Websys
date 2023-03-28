@@ -84,7 +84,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                         
                         <div class="homecatbtndiv">
-                            <a class="homecatbtn" href="../Pages/Products.php">View All Categories</a>
+                            <a class="homecatbtn" href="../Pages/ProductList.php">View All Categories</a>
                         </div>
                         
                     </div>
