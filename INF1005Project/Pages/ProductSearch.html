@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Search</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Product Search</h1>
+    <form method="GET" action="search_products.php">
+      <div class="form-group">
+        <label for="search">Search Term:</label>
+        <input type="text" class="form-control" id="search" name="search" required>
+      </div>
+      <div class="form-group">
+        <label>Categories:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="category_top" name="categories[]" value="Top">
+          <label class="form-check-label" for="category_top">Top</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="category_bottom" name="categories[]" value="Bottom">
+          <label class="form-check-label" for="category_bottom">Bottom</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="category_jeans" name="categories[]" value="Jeans">
+          <label class="form-check-label" for="category_jeans">Jeans</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="category_outwear" name="categories[]" value="Outwear">
+          <label class="form-check-label" for="category_outwear">Outwear</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="category_shoes" name="categories[]" value="Shoes">
+          <label class="form-check-label" for="category_shoes">Shoes</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Search Products</button>
+    </form>
+  </div>
+</body>
+</html>
