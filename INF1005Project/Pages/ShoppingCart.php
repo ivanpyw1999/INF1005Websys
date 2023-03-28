@@ -123,7 +123,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
 
 
-                                <form class="mt-4">
+                                <form class="mt-4" action="" method="post">
                                     <div class="d-flex justify-content-between align-items-center mb-4">
                                         <h5 class="mb-0">PAYMENT DETAILS</h5>
                                     </div>
@@ -131,15 +131,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                                     <div class="form-outline form-white mb-4">
                                         <label class="form-label" for="typeName">CARD NUMBER</label>
-                                        <input type="text" id="typeName" class="form-control form-control-sm" size="5"
-                                               placeholder="CARD NUMBER" />
+                                        <input type="text" id="cardnumber" class="form-control form-control-sm" size="5"
+                                               placeholder="CARD NUMBER" minlength="16" maxlength="16" nu/>
 
                                     </div>
 
-                                    <div class="form-outline form-white mb-4">
+                                    <div class="form-outline form-white mb-4 form-group">
                                         <label class="form-label" for="typeText">NAME ON CARD</label>
-                                        <input type="text" id="typeText" class="form-control form-control-sm" size="5"
-                                               placeholder="NAME" minlength="19" maxlength="19" />
+                                        <input type="text" id="cardname" class="form-control form-control-sm" size="5"
+                                               placeholder="NAME"  maxlength="30" />
 
                                     </div>
 
@@ -147,8 +147,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         <div class="col-md-6">
                                             <div class="form-outline form-white">
                                                 <label class="form-label" for="typeExp">Expiration</label>
-                                                <input type="text" id="typeExp" class="form-control form-control-sm"
-                                                       placeholder="MM/YYYY" size="5" id="exp" minlength="7" maxlength="7" />
+                                                <input type="text" id="cardexp" class="form-control form-control-sm"
+                                                       placeholder="MM/YY" size="5" id="exp" minlength="5" maxlength="5" />
 
                                             </div>
                                         </div>
@@ -156,15 +156,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         <div class="col-md-6">
                                             <div class="form-outline form-white">
                                                 <label class="form-label" for="typeText">CVV</label>
-                                                <input type="password" id="typeText" class="form-control form-control-sm"
-                                                       placeholder="&#9679;&#9679;&#9679;" size="5" minlength="3" maxlength="3" />
+                                                <input type="password" id="cardcvv" class="form-control form-control-sm"
+                                                       placeholder="CVV" size="5" minlength="3" maxlength="3" />
 
                                             </div>
                                         </div>
 
                                     </div>
                                     <div class ="row mb-12">
-                                        <button type="button" style="background-color: black" class="btn btn-secondary btn-lg btn-block">MAKE PAYMENT</button>
+                                        <button type="button" style="background-color: black" class="btn btn-secondary btn-lg btn-block" href="Homepage.php">MAKE PAYMENT</button>
                                     </div>
                                 </form>
 

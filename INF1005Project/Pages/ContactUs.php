@@ -51,75 +51,49 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                 <div class="row">
 
-                    <!--Grid column-->
                     <div class="col-md-12 mb-md-0 mb-5">
-                        <form id="contact-form" name="contact-form" action="process_ContactUs.php" method="POST">
 
-                            <!--Grid row-->
-                            <div class="row">
+                        <form method="post">
 
-                                <!--Grid column-->
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                        <label for="name" class="">Your name</label>
-                                        <input type="text" id="name" name="name" class="form-control">
-                                        
-                                    </div>
+                            <div class ="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Name:</label>
+                                    <input class="form-control" type="text" id="name"
+                                           minlength = "10" required name="name" placeholder="Enter your name">
                                 </div>
-                                <!--Grid column-->
 
-                                <!--Grid column-->
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                        <label for="email" class="">Your email</label>
-                                        <input type="text" id="email" name="email" class="form-control">
-                                        
-                                    </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email:</label>
+                                    <input class="form-control" type="email" id="email"
+                                           minlength = "10" required name="email" placeholder="Enter email">
                                 </div>
-                                <!--Grid column-->
 
                             </div>
-                            <!--Grid row-->
 
-                            <!--Grid row-->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="md-form mb-0">
-                                        <label for="subject" class="">Subject</label>
-                                        <input type="text" id="subject" name="subject" class="form-control">
-                                        
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label for="subject">Subject:</label>
+                                <input class="form-control" type="text" id="subject"
+                                       minlength = "10" required name="subject" placeholder="Enter the subject">
                             </div>
-                            <!--Grid row-->
 
-                            <!--Grid row-->
-                            <div class="row">
-
-                                <!--Grid column-->
-                                <div class="col-md-12">
-
-                                    <div class="md-form">
-                                        <label for="message">Your message</label>
-                                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                        
-                                    </div>
-
-                                </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                             </div>
-                            <!--Grid row-->
 
+                            <div class="form-group">
+                                <button class="btn btn-dark" type="submit">Submit</button>
+                            </div>
                         </form>
-
-                        <div class="text-center text-md-left" style="padding-top: 5%">
-                            <button type="button" class="btn btn-dark">Submit</button>
-                        </div>
-                        <div class="status"></div>
                     </div>
-                    <!--Grid column-->
+                        <!--Grid column-->
 
 
-                </div>
+                        </div>
+                        <!--Grid column-->
+
+
+                    </div>
 
             </section>
             <!--Section: Contact v.2-->
