@@ -1,188 +1,4 @@
-<?php
-$username = $fname = $lname = $email = $street = $blk = $unit = $city = $postal = "";
-
-if (!empty($_GET["errorMsgPassword"]))
-    echo "<script> alert('" . $_GET['errorMsgPassword'] . "')</script>";
-
-
-
-// button clicked functions
-if (isset($_REQUEST["personal-information-edit-button"])) {
-    global $username, $fname, $lname, $emai, $success, $errorMsg;
-    $success = true;
-    $errorMsg = "";
-
-    if (empty($_POST["email"])) {
-        $errorMsg .= "Email is required.<br>";
-        $success = false;
-
-        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg);
-    }
-    if (empty($_POST["fname"])) {
-        $errorMsg .= "First Name is required.<br>";
-        $success = false;
-
-        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg);
-    }
-    if (empty($_POST["lname"])) {
-        $errorMsg .= "Last Name is required.<br>";
-        $success = false;
-
-        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg);
-    }
-
-    if ($success) {
-        // Database
-        $errorMsg = $_POST["fname"] . " " . $_POST["lname"] . " " . $_POST["email"];
-        // reload page to display new information
-        header("Location: ../Pages/MyAccount.php?errorMsgPersonal=" . $errorMsg); //temp - remove
-        //        header("Location: ../Pages/MyAccount.php");
-    }
-}
-
-if (isset($_REQUEST["delivery-location-edit-button"])) {
-    global $success, $errorMsg;
-    $success = true;
-    $errorMsg = "";
-
-    if (empty($_POST["street"])) {
-        $errorMsg .= "Street is required.<br>";
-        $success = false;
-        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
-    }
-    if (empty($_POST["blk"])) {
-        $errorMsg .= "Block is required.<br>";
-        $success = false;
-        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
-    }
-    if (empty($_POST["unit"])) {
-        $errorMsg .= "Unit is required.<br>";
-        $success = false;
-        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
-    }
-    if (empty($_POST["city"])) {
-        $errorMsg .= "City is required.<br>";
-        $success = false;
-        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
-    }
-    if (empty($_POST["postal"])) {
-        $errorMsg .= "Postal is required.<br>";
-        $success = false;
-        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg);
-    }
-
-    if ($success) {
-        // Database
-        $errorMsg = $_POST["street"] . " " . $_POST["blk"] . " " . $_POST["unit"] . " " . $_POST["city"] . " " . $_POST["postal"];
-        // reload page to display new information
-        header("Location: ../Pages/MyAccount.php?errorMsgDelivery=" . $errorMsg); //temp - remove 
-//        header("Location: ../Pages/MyAccount.php");
-    }
-}
-
-if (isset($_REQUEST["change-password-check-button"])) {
-    global $username, $fname, $lname, $emai, $success, $errorMsg;
-    $success = true;
-    $errorMsg = "";
-
-    if (empty($_POST["pwd"])) {
-        $errorMsg .= "Password is required.<br>";
-        $success = false;
-    }
-
-    if ($success) {
-        // Database
-        // Check if password is correct
-        // if correct update password
-        header("Location: ../Pages/MyAccount.php?errorMsgPassword=Successfully Changed Password !");
-        // if not correct
-//        header("Location: ../Pages/MyAccount.php?errorMsgPassword=" . $errorMsg); //remove errorMSg 
-    }
-}
-
-// temp Read User Table Function
-function TempReadUserInfo() { // used by div Personal-Information-View & Personal-Information-Edit
-    global $username, $fname, $lname, $email;
-
-    // replace with SQL crap
-    $result = array("username" => "SitiDenver",
-        "fname" => "Siti",
-        "lname" => "Denver",
-        "email" => "email@gmail.com");
-
-    $username = $result['username'];
-    $fname = $result['fname'];
-    $lname = $result['lname'];
-    $email = $result['email'];
-}
-
-function TempReadDeliveryInfo() { // used by div Delivery-Location-View & Delivery-Location-Edit
-    global $street, $blk, $unit, $city, $postal;
-
-    // replace with SQL crap
-    $result = array("street" => "Dover Street",
-        "blk" => "10",
-        "unit" => "4-20",
-        "city" => "Singapore",
-        "postal" => "529863");
-
-    $street = $result['street'];
-    $blk = $result['blk'];
-    $unit = $result['unit'];
-    $city = $result['city'];
-    $postal = $result['postal'];
-}
-
-function TempReadOrderList() {
-
-    // test data - replace with sql
-    $result = array(array("productID" => "1",
-            "productName" => "Button Up Shirt",
-            "productDescription" => "XS, Navy Blue",
-            "amt" => 2,
-            "subtotal" => 59.80,
-            "photo" => "https://img.freepik.com/free-photo/man-navy-jacket-shorts-streetwear_53876-102182.jpg?w=826&t=st=1679844960~exp=1679845560~hmac=9250c11ea1c2c88691a554f8957db7333130371958cc314569cdab97bd299252"),
-        array("productID" => "2",
-            "productName" => "Oversized Sweater",
-            "productDescription" => "M, Black",
-            "amt" => 1,
-            "subtotal" => 24.90,
-            "photo" => "https://img.freepik.com/free-photo/man-black-sweater-black-bucket-hat-youth-apparel-shoot_53876-102294.jpg?w=740&t=st=1679846421~exp=1679847021~hmac=02692611e7ba1d7e85506282babae17b4bf52ba4ee599d064473611756f1d801"));
-
-    foreach ($result as $order) { // test data - iterate through results
-        echo '<div class="row">
-                <div class="col">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <div>
-                                        <img
-                                            src="' . $order['photo'] . '"
-                                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px; margin-right: 5px">
-                                        </div>
-                                        <div class="ms-3 px-2">
-                                            <h5>' . $order['productName'] . '</h5>
-                                            <p class="small mb-0">' . $order['productDescription'] . '</p>
-                                         </div>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center">
-                                        <div style="width: 50px;">
-                                            <h5 class="fw-normal mb-0">' . $order['amt'] . '</h5>
-                                        </div>
-                                    <div style="width: 80px;">
-                                        <h5 class="mb-0">$' . $order['subtotal'] . '</h5>
-                                    </div>
-                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>';
-    }
-}
-?>
+<?php session_start() ?>
 
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -212,9 +28,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script defer src="../js/myAccount.js"></script>
         <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
-
 
         <title>FastFash</title>
         <meta charset="UTF-8">
@@ -249,99 +63,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             </div>
                             <!--Personal-Information-View-->
                             <div id="personal-information-view">
-                                <?php TempReadUserInfo() ?>
                                 <div class="row">
                                     <div class="col align-self-center">
                                         PERSONAL INFORMATION
                                     </div>
                                     <div class="col text-right">
-                                        <button id="personal-information-view-button" class="btn btn-link text-dark" onclick="myFunction(this.id)">Edit</button>
+                                        <button id="personal-information-view-button" class="btn btn-link text-dark" onclick="enableInputs()">Edit</button>
                                     </div>
                                 </div>
                                 <hr/>
-                                <div class="row justify-content-center">
-                                    <!--Usename Display-->
-                                    <div class="col-12 col-md-8">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="bday_label">Username</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="bday_label"><?php echo $username ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br/>
-                                <div class="row justify-content-center">
-                                    <!--First Name-->
-                                    <div class="col-12 col-md-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="fname_label">First Name</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="fname_label"><?php echo $fname ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Last  Name-->
-                                    <div class="col-12 col-md-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="lname_label">Last Name</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="lname_label"><?php echo $lname ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br class="d-none d-md-block d-lg-block"/>
-                                <div class="row justify-content-center">
-                                    <!--Email Display-->
-                                    <div class="col-12 col-md-8">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="bday_label">Email</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="bday_label"><?php echo $email ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <!--Error Display-->
-                                    <div class="col-12 col-md-8">
-                                        <?php if (!empty($_GET["errorMsgPersonal"])) echo "<div class='alert alert-danger'>" . $_GET['errorMsgPersonal'] . "</div>"; ?>
-                                    </div>
-                                </div>
-                                <br/>
-                            </div>
-                            <!--Personal-Information-Edit-->
-                            <div id="personal-information-edit" class="d-none">
-                                <?php TempReadUserInfo() ?>
-
-                                <form action="#" method="POST" >
-                                    <div class="row">
-                                        <div class="col align-self-center">
-                                            PERSONAL INFORMATION
-                                        </div>
-                                        <div class="col text-right">
-                                            <button id="personal-information-edit-button" name="personal-information-edit-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Save</button>
-                                        </div>
-                                    </div>
-                                    <hr/>
+                                <form action="account_process.php" method="post">
                                     <div class="row justify-content-center">
                                         <!--Usename Display-->
                                         <div class="col-12 col-md-8">
                                             <div class="row justify-content-center">
-                                                <div class="col-5 col-md-12 font-weight-bold">
-                                                    <label for="username_label">Username</label>
+                                                <div class="col-5 col-md-12">
+                                                    <label for="bday_label">Username</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <label id="username_label"><?php echo $username ?></label>
+                                                    <input type="text" id="username" name="username" class="form-control" value="<?php echo $_SESSION["username"] ?>" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -350,177 +90,131 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <div class="row justify-content-center">
                                         <!--First Name-->
                                         <div class="col-12 col-md-4">
-                                            <!--First Name-->
-                                            <div class="form-group ">
-                                                <label class="font-weight-bold" for="fname">First Name</label>
-                                                <input class="form-control" type="text" id="fname" name="fname"
-                                                       required maxlenth="45" placeholder="First name" value="<?php echo $fname ?>">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="fname_label">First Name</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <input type="text" id="fname" name="fname" class="form-control" value="<?php echo $_SESSION["fname"] ?>" disabled>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!--Last Name-->
+                                        <!--Last  Name-->
                                         <div class="col-12 col-md-4">
-                                            <div class="form-group">
-                                                <label class="font-weight-bold" for="lname">Last Name</label>
-                                                <input class="form-control" type="text" id="lname" name="lname"
-                                                       required maxlenth="45" placeholder="Last name" value="<?php echo $lname ?>">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="lname_label">Last Name</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <input type="text" id="lname" name="lname" class="form-control" value="<?php echo $_SESSION["lname"] ?>" disabled>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <br class="d-none d-md-block d-lg-block"/>
                                     <div class="row justify-content-center">
-                                        <!--Email-->
+                                        <!--Email Display-->
                                         <div class="col-12 col-md-8">
-                                            <div class="form-group">
-                                                <label class="font-weight-bold" for="email">Email</label>
-                                                <input class="form-control" type="email" id="email" name="email"
-                                                       required maxlenth="45" placeholder="Email" value="<?php echo $email ?>">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="bday_label">Email</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <input type="email" id="email" name="email" class="form-control" value="<?php echo $_SESSION["email"] ?>" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="form-group">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-8">
+                                                <button type="submit" id="submitBtn" class="btn btn-primary" disabled>Submit</button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-                                <br/>
                             </div>
                             <!--Delivery Location View-->
                             <div id="delivery-location-view">
-                                <?php TempReadDeliveryInfo() ?>
                                 <div class="row">
                                     <div class="col align-self-center">
                                         DELIVERY ADDRESS
-                                    </div>
-                                    <div class="col text-right">
-                                        <button id="delivery-location-view-button" class="btn btn-link text-dark" onclick="myFunction(this.id)">Edit</button>
-                                    </div>
+                                    </div>                   
                                 </div>
                                 <hr/>
-                                <div class="row justify-content-center">
-                                    <!--Address-->
-                                    <div class="col-12 col-md-8">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="street_label">Street</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="street_label"><?php echo $street ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <!--Blk-->
-                                    <div class="col-12 col-md-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="blk_label">Block</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="blk_label"><?php echo $blk ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Unit-->
-                                    <div class="col-12 col-md-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="unit_label">Unit</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="unit_label"><?php echo $unit ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <!--Postal-->
-                                    <div class="col-12 col-md-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="city_label">City</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="city_label"><?php echo $city ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--City-->
-                                    <div class="col-12 col-md-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-5 col-md-12 font-weight-bold">
-                                                <label for="postal_label">Postal</label>
-                                            </div>
-                                            <div class="col-6 col-md-12">
-                                                <label id="postal_label"><?php echo $postal ?></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <!--Error Display-->
-                                    <div class="col-12 col-md-8">
-                                        <?php if (!empty($_GET["errorMsgDelivery"])) echo "<div class='alert alert-danger'>" . $_GET['errorMsgDelivery'] . "</div>"; ?>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Delivery Location Edit-->
-                            <div id="delivery-location-edit" class="d-none">
-                                <form action="#" method="POST" >
-                                    <div class="row">
-                                        <div class="col align-self-center">
-                                            DELIVERY ADDRESS
-                                        </div>
-                                        <div class="col text-right">
-                                            <button id="delivery-location-edit-button" name="delivery-location-edit-button" class="btn btn-warning text-dark" onclick="myFunction(this.id)">Save</button>
-                                        </div>
-                                    </div>
-                                    <hr/>
+                                <form action="delivery_process.php" method="post">
                                     <div class="row justify-content-center">
+                                        <!--Address-->
                                         <div class="col-12 col-md-8">
-                                            <!--Street-->
-                                            <div class="form-group">
-                                                <label class="font-weight-bold" for="address">Street</label>
-                                                <input class="form-control" type="text" id="street" name="street"
-                                                       required maxlenth="45" placeholder="Street" value="<?php echo $street ?>">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="street_label">Block</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <input type="text" id="block" name="block" class="form-control" value="<?php echo $_SESSION["block"] ?>" disabled>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
+                                        <!--Blk-->
                                         <div class="col-12 col-md-4">
-                                            <!--Blk-->
-                                            <div class="form-group">
-                                                <label class="font-weight-bold" for="city">Block</label>
-                                                <input class="form-control" type="text" id="blk" name="blk"
-                                                       required maxlenth="45" placeholder="Block" value="<?php echo $blk ?>">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="blk_label">Street</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <input type="text" id="street" name="street" class="form-control" value="<?php echo $_SESSION["street"] ?>" disabled>
+                                                </div>
                                             </div>
                                         </div>
+                                        <!--Unit-->
                                         <div class="col-12 col-md-4">
-                                            <!--Unit-->
-                                            <div class="form-group">
-                                                <label class="font-weight-bold" for="country">Unit</label>
-                                                <input class="form-control" type="text" id="unit" name="unit"
-                                                       required maxlenth="45" placeholder="Unit" value="<?php echo $unit ?>">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="unit_label">Unit</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <input type="text" id="unit" name="unit" class="form-control" value="<?php echo $_SESSION["unit"] ?>" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                    <div class="row justify-content-center">
+                                        <!--Postal-->
+                                        <div class="col-12 col-md-4">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="city_label">City</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <label id="city_label">Singapore</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--City-->
+                                        <div class="col-12 col-md-4">
+                                            <div class="row justify-content-center">
+                                                <div class="col-5 col-md-12">
+                                                    <label for="postal_label">Postal</label>
+                                                </div>
+                                                <div class="col-6 col-md-12">
+                                                    <input type="text" id="postal" name="postal" class="form-control" value="<?php echo $_SESSION["postal"] ?>" disabled>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-12 col-md-4">
-                                            <!--City-->
-                                            <div class="form-group">
-                                                <label class="font-weight-bold" for="city">City</label>
-                                                <input class="form-control" type="text" id="city" name="city"
-                                                       required maxlenth="45" placeholder="City" value="<?php echo $city ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-4">
-                                            <!--Postal-->
-                                            <div class="form-group">
-                                                <label class="font-weight-bold" for="country">Postal</label>
-                                                <input class="form-control" type="text" id="postal" name="postal"
-                                                       required maxlenth="45" placeholder="postal" value="<?php echo $postal ?>">
+                                    <div class="form-group">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-8">
+                                                <button type="submit" id="submitDEBtn" class="btn btn-primary" disabled>Submit</button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            </div>                           
                         </div>
-
                         <!--Order History-->
                         <div class="tab-pane fade 50vh" id="order-history" role="tabpanel" aria-labelledby="order-history-tab">
                             <div id="order-history-view">
@@ -530,58 +224,63 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>
                                 </div>
                                 <hr/>
-                                <br/>
-                                <?php TempReadOrderList(); ?>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card mb-3">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <div>
+                                                            <img
+                                                                src="https://img.freepik.com/free-photo/man-navy-jacket-shorts-streetwear_53876-102182.jpg?w=826&t=st=1679844960~exp=1679845560~hmac=9250c11ea1c2c88691a554f8957db7333130371958cc314569cdab97bd299252"
+                                                                class="img-fluid rounded-3" alt="Product Ordered" style="width: 65px; margin-right: 5px">
+                                                        </div>
+                                                        <div class="ms-3 px-2">
+                                                            <h5>Product Name</h5>
+                                                            <p class="small mb-0">Product Description</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <div style="width: 50px;">
+                                                            <h5 class="fw-normal mb-0">2</h5>
+                                                        </div>
+                                                        <div style="width: 80px;">
+                                                            <h5 class="mb-0">$59.80</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!--Change Password-->
                         <div class="tab-pane fade" id="change-password" role="tabpanel" aria-labelledby="change-password-messages-tab">
                             <!--Change Password Check-->
                             <div id="change-password-check">
-                                <form action="#" method="POST" >
-                                    <div class="row">
-                                        <div class="col align-self-center">
-                                            <h3 class="fw-bold">Change Password</h3>
-                                        </div>
-                                        <div class="col text-right d-none d-md-block d-lg-block">
-                                            <button id="change-password-check-button" name="change-password-check-button" class="btn btn-warning text-dark" onclick="">Change Password</button>
-                                        </div>
-                                    </div>
-                                    <hr/>
+                                <div class="row">
+                                    <div class="col align-self-center">
+                                        <h3 class="fw-bold">Change Password</h3>
+                                    </div>                                    
+                                </div>
+                                <hr/>
+                                <form action="password_process.php" method="post">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-4">
                                             <!--Password Input-->
                                             <div class="form-group">
-                                                <label for="pwd_old">Current Password:</label>
-                                                <input class="form-control" type="password" id="pwd_old"
-                                                       minlength = "10" required name="pwd" placeholder="Password">
+                                                <label for="pwd">New Password:</label>
+                                                <input class="form-control" type="password" id="pwd" name="pwd"
+                                                        required name="pwd" placeholder="New Password">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-4">
-                                            <!--New Password Input-->
-                                            <div class="form-group">
-                                                <label for="pwd_new">New Password:</label>
-                                                <input class="form-control" type="password" id="pwd_new"
-                                                       minlength = "10" required name="pwd" placeholder="New Password">
-                                            </div>
-
-                                            <!--Confirm Password Input-->
-                                            <div class="form-group">
-                                                <label for="pwd_cfm">Confirm Password:</label>
-                                                <input class="form-control" type="password" id="pwd_cfm"
-                                                       minlength = "10" required name="pwd" placeholder="Confirm Password">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col text-right d-block d-md-none d-lg-none">
-                                            <button id="change-password-check-button" name="change-password-check-button" class="btn btn-warning text-dark" onclick="">Change Password</button>
-                                        </div>
+                                    <div class="col text-right d-none d-md-block d-lg-block">
+                                        <button id="change-password-check-button" class="btn btn-warning text-dark" onclick="">Change Password</button>
                                     </div>
                                 </form>
-                            </div>
+                            </div>              
                         </div>
                     </div>
                 </div>
@@ -592,7 +291,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         include "footer.inc.php";
         ?>
 
-    </body>
-
+    </body>z
 </html>
-
