@@ -100,11 +100,9 @@ if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     echo "<div class='col-md-4 mb-4'>";
     echo "<div class='card'>";
-    echo "<a href='viewProduct.php?productId=" . $row["id"] . "'>";
-    echo "<img src='" . $row["image"] . "' class='card-img-top' alt='" . $row["name"] . "'>";
-    echo "</a>";
+    echo "<img src='" . $row["image"] . "' class='card-img-top' alt='" . $row["name"] . "' style='width: 320px; height: 200px;'>";
     echo "<div class='card-body'>";
-    echo "<a href='viewProduct.php?productId=" . $row["id"] . "'><h5 class='card-title'>" . $row["name"] . "</h5></a>";
+    echo "<h5 class='card-title'>" . $row["name"] . "</h5>";
     echo "<p class='card-text'>" . $row["description"] . "</p>";
     echo "<ul class='list-group list-group-flush'>";
     echo "<li class='list-group-item'>Price: $" . number_format($row["price"], 2) . "</li>";
