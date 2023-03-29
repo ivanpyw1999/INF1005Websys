@@ -1,25 +1,6 @@
 <?php session_start() ?>
 
-<!--<script>
-function enableInputs(clicked_button) {
-    
-    switch(clicked_button) {
-        case    "personal-information-view-button":
-                    alert("test");
-                    $(".personalInfoButton").toggleClass('d-none');
-                    var inputs = document.getElementsByClassName('personalInfo');
-                    break;
-        case    "delivery-location-view-button":
-                    $(".deliverylocationButton").toggleClass('d-none');
-                    var inputs = document.getElementsByClassName('deliverylocation');
-                    break;
-    }
-    
-    for (var i = 0; i < inputs.length; i++) {
-        inputs[i].disabled = false;
-    }
-}
-</script>-->
+
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
@@ -48,8 +29,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
         <script defer src="../js/myAccount.js"></script>
+        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 
         <title>FastFash</title>
         <meta charset="UTF-8">
@@ -258,7 +239,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                         <hr/>
                                                         <div class="d-flex justify-content-between">
                                                             <div class="d-flex flex-row align-items-center">
-                                                                <h5 class="pl-3 mb-0"><?php echo $row['purchasedate']; ?></h5>
+                                                                <h5 class="pl-3 mb-0"><?php echo $prevOrder; ?></h5>
                                                             </div>
                                                             <div class="d-flex flex-row align-items-center">
                                                                 <h5 class="pr-3 mb-0">$<?php echo $grand_total; ?></h5>
