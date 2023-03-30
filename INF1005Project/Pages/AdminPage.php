@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<?php session_start() ?>
 <?php session_start();
 if($_SESSION["member-id"]!='1'){
     echo "<script>
@@ -690,4 +688,4 @@ include "footer.inc.php";
 
     </body>
 </html>
->>>>>>> sad
+
