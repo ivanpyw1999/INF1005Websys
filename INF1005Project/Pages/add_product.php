@@ -1,4 +1,6 @@
 <?php
+session_start();
+if($_SESSION["member-id"]!='1'){
 $config = parse_ini_file('../../../private/db-config.ini');
 $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
 
@@ -30,4 +32,5 @@ if ($stmt->execute()) {
 // Close the database connection
 $stmt->close();
 $conn->close();
+}
 ?>

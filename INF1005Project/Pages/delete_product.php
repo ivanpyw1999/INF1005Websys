@@ -1,4 +1,6 @@
 <?php
+session_start();
+if($_SESSION["member-id"]!='1'){
 // Get the ID of the product to delete
 $id = $_POST['id'];
 
@@ -24,4 +26,5 @@ if ($conn->query($sql) === TRUE) {
 
 // Close the database connection
 $conn->close();
+}
 ?>
