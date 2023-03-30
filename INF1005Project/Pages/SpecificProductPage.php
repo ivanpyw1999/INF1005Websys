@@ -1,3 +1,41 @@
+<?php
+session_start();
+
+$config = parse_ini_file('../../../private/db-config.ini');
+$conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+
+function getProductFromID($id) {
+
+    global $conn;
+    $sql = "SELECT * FROM products WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows == 1)
+        return $result->fetch_assoc();
+    else
+        return null;
+}
+
+function getBestSeller() { // gets random 3 products :/
+    global $conn;
+    $sql = "SELECT * FROM products order by RAND() LIMIT 3";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $products = array();
+        while ($row = $result->fetch_assoc()) {
+            $products[] = $row;
+        }
+        return $products;
+    } else {
+        return null;
+    }
+}
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -37,18 +75,23 @@
         include "nav.inc.php";
         ?>
         <main class="container">
-
-
             <div class="container px-4 px-lg-5 my-5">
+
+                <?php
+                $product = getProductFromID($_GET['id']);
+                if (empty($_GET['id']) || $product == null)
+                    header("Location: ../Pages/ErrorHandling.php");
+                ?>
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
                     <div class="col-md-6">
-                        <h1 class="display-5 fw-bolder">Product Name</h1>
+                        <img class="card-img-top mb-5 mb-md-0" src="<?php echo $product['image'] ?>" alt="..." /></div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bolder"><?php echo $product['name'] ?></h1>
                         <div class="fs-5 mb-5">
 
-                            <span id="specific_price">Price Tag</span>
+                            <span id="specific_price"><?php echo $product['price'] ?></span>
                         </div>
-                        <p class="lead">This is where the description of product should be</p>
+                        <p class="lead"><?php echo $product['description'] ?></p>
                         <div class="d-flex">
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-cart-fill me-1"></i>
@@ -58,79 +101,53 @@
                     </div>
                 </div>
 
+
                 <section class="bg-white">
                     <div class="text-center container py-5">
                         <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
 
                         <div class="row">
-                            <div class="col-lg-4 col-md-12 mb-4">
-                                <div class="card">
-                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-                                         data-mdb-ripple-color="light">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp"
-                                             class="w-100" />
 
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="" class="text-reset">
-                                            <h5 class="card-title mb-3">Product name</h5>
-                                        </a>
+                            <?php
+                            $products = getBestSeller();
 
-                                        <h6 class="mb-3">$61.99</h6>
-                                    </div>
+                            foreach ($products as $product) {
+                                ?>
+                                <div class="col-lg-4 col-md-6 mb-4">
+
+                                    <a href="<?php echo 'SpecificProductPage.php?id=' . $product['id'] ?>" class="text-reset">
+                                        <div style="height: 100%" class="card">
+                                            <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                                 data-mdb-ripple-color="light">
+                                                <img src="<?php echo $product['image'] ?>"
+                                                     class="w-100" />
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title mb-3"><?php echo $product['name'] ?></h5>
+                                                <h6 class="mb-3"><?php echo $product['price'] ?></h6>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-                                         data-mdb-ripple-color="light">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
-                                             class="w-100" />
-
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="" class="text-reset">
-                                            <h5 class="card-title mb-3">Product name</h5>
-                                        </a>
-
-                                        <h6 class="mb-3">$61.99</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/shoes%20(3).webp"
-                                             class="w-100" />
-
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="" class="text-reset">
-                                            <h5 class="card-title mb-3">Product name</h5>
-                                        </a>
-
-                                          <h6 class="mb-3">$61.99</h6>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
                         </div>
-
-
                     </div>
+                </section>
             </div>
-        </div>
-    </div>
-</section>
-</div>
 
+        </main>
+        <?php
+        include "footer.inc.php";
+        ?>
 
-</main>
-<?php
-include "footer.inc.php";
-?>
-
-</body>
+    </body>
 
 </html>
+
+<!-- 
+old photos
+https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp
+https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp
+https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/shoes%20(3).webp
+
+-->

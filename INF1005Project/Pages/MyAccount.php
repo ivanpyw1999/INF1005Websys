@@ -1,5 +1,6 @@
 <?php session_start() ?>
 
+
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
@@ -27,6 +28,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
+        <script defer src="../js/myAccount.js"></script>
         <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 
         <title>FastFash</title>
@@ -62,25 +64,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             </div>
                             <!--Personal-Information-View-->
                             <div id="personal-information-view">
-                                <div class="row">
-                                    <div class="col align-self-center">
-                                        PERSONAL INFORMATION
+                                <form action="../processes/account_process.php" method="post">
+                                    <div class="row">
+                                        <div class="col align-self-center">
+                                            PERSONAL INFORMATION
+                                        </div>
+                                        <div class="col text-right">
+                                            <button type="button" id="personal-information-view-button" class="btn btn-link text-dark personalInfoButton" onclick="enableInputs(this.id)">Edit</button>
+                                            <button  type="submit" class="btn btn-warning personalInfo personalInfoButton d-none">Submit</button>
+                                        </div>
                                     </div>
-                                    <div class="col text-right">
-                                        <button id="personal-information-view-button" class="btn btn-link text-dark" onclick="enableInputs()">Edit</button>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <form action="account_process.php" method="post">
+                                    <hr/>
                                     <div class="row justify-content-center">
                                         <!--Usename Display-->
                                         <div class="col-12 col-md-8">
                                             <div class="row justify-content-center">
                                                 <div class="col-5 col-md-12">
-                                                    <label for="bday_label">Username</label>
+                                                    <label for="username_label">Username</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="text" id="username" name="username" class="form-control" value="<?php echo $_SESSION["username"] ?>" disabled>
+                                                    <input type="text" id="username" name="username" class="form-control personalInfo" value="<?php echo $_SESSION["username"] ?>" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,7 +97,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                     <label for="fname_label">First Name</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="text" id="fname" name="fname" class="form-control" value="<?php echo $_SESSION["fname"] ?>" disabled>
+                                                    <input type="text" id="fname" name="fname" class="form-control personalInfo" value="<?php echo $_SESSION["fname"] ?>" disabled>
+                                                    <br class="d-block d-md-none"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -105,12 +109,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                     <label for="lname_label">Last Name</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="text" id="lname" name="lname" class="form-control" value="<?php echo $_SESSION["lname"] ?>" disabled>
+                                                    <input type="text" id="lname" name="lname" class="form-control personalInfo" value="<?php echo $_SESSION["lname"] ?>" disabled>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <br class="d-none d-md-block d-lg-block"/>
+                                    <br/>
                                     <div class="row justify-content-center">
                                         <!--Email Display-->
                                         <div class="col-12 col-md-8">
@@ -119,52 +123,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                     <label for="bday_label">Email</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="email" id="email" name="email" class="form-control" value="<?php echo $_SESSION["email"] ?>" disabled>
+                                                    <input type="email" id="email" name="email" class="form-control personalInfo" value="<?php echo $_SESSION["email"] ?>" disabled>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <br/>
-                                    <div class="form-group">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-md-8">
-                                                <button type="submit" id="submitBtn" class="btn btn-primary" disabled>Submit</button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </form>
                             </div>
                             <!--Delivery Location View-->
                             <div id="delivery-location-view">
-                                <div class="row">
-                                    <div class="col align-self-center">
-                                        DELIVERY ADDRESS
-                                    </div>                   
-                                </div>
-                                <hr/>
-                                <form action="delivery_process.php" method="post">
+
+                                <form action="../processes/delivery_process.php" method="post">
+                                    <div class="row">
+                                        <div class="col align-self-center">
+                                            DELIVERY ADDRESS
+                                        </div>    
+                                        <div class="col text-right">
+                                            <button type="button" id="delivery-location-view-button" class="btn btn-link text-dark deliverylocationButton" onclick="enableInputs(this.id)">Edit</button>
+                                            <button  type="submit" class="btn btn-warning deliverylocation deliverylocationButton d-none">Submit</button>
+                                        </div>
+                                    </div>
+                                    <hr/>
                                     <div class="row justify-content-center">
-                                        <!--Address-->
+                                        <!--Street-->
                                         <div class="col-12 col-md-8">
                                             <div class="row justify-content-center">
                                                 <div class="col-5 col-md-12">
-                                                    <label for="street_label">Block</label>
+                                                    <label for="street_label">Street</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="text" id="block" name="block" class="form-control" value="<?php echo $_SESSION["block"] ?>" disabled>
+                                                    <input type="text" id="street" name="street" class="form-control deliverylocation" value="<?php echo $_SESSION["street"] ?>" disabled>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <br/>
                                     <div class="row justify-content-center">
                                         <!--Blk-->
                                         <div class="col-12 col-md-4">
                                             <div class="row justify-content-center">
                                                 <div class="col-5 col-md-12">
-                                                    <label for="blk_label">Street</label>
+                                                    <label for="blk_label">Block</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="text" id="street" name="street" class="form-control" value="<?php echo $_SESSION["street"] ?>" disabled>
+                                                    <input type="text" id="block" name="block" class="form-control deliverylocation" value="<?php echo $_SESSION["block"] ?>" disabled>
+                                                    <br class="d-block d-md-none"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -175,39 +179,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                     <label for="unit_label">Unit</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="text" id="unit" name="unit" class="form-control" value="<?php echo $_SESSION["unit"] ?>" disabled>
+                                                    <input type="text" id="unit" name="unit" class="form-control deliverylocation" value="<?php echo $_SESSION["unit"] ?>" disabled>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>                          
+                                    </div> 
+                                    <br/>                         
                                     <div class="row justify-content-center">
-                                        <!--Postal-->
+                                        <!--City-->
                                         <div class="col-12 col-md-4">
                                             <div class="row justify-content-center">
                                                 <div class="col-5 col-md-12">
                                                     <label for="city_label">City</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <label id="city_label">Singapore</label>
+                                                    <input type="text" id="city" name="city" class="form-control" value="Singapore" disabled>
+                                                    <br class="d-block d-md-none"/>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--City-->
+                                        <!--Postal-->
                                         <div class="col-12 col-md-4">
                                             <div class="row justify-content-center">
                                                 <div class="col-5 col-md-12">
                                                     <label for="postal_label">Postal</label>
                                                 </div>
                                                 <div class="col-6 col-md-12">
-                                                    <input type="text" id="postal" name="postal" class="form-control" value="<?php echo $_SESSION["postal"] ?>" disabled>
+                                                    <input type="text" id="postal" name="postal" class="form-control deliverylocation" value="<?php echo $_SESSION["postal"] ?>" disabled>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-md-8">
-                                                <button type="submit" id="submitDEBtn" class="btn btn-primary" disabled>Submit</button>
                                             </div>
                                         </div>
                                     </div>
@@ -224,28 +223,68 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                                 <hr/>
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-12">
                                         <div class="card mb-3">
                                             <div class="card-body">
-                                                <div class="d-flex justify-content-between">
-                                                    <div class="d-flex flex-row align-items-center">
-                                                        <div>
-                                                            <img
-                                                                src="https://img.freepik.com/free-photo/man-navy-jacket-shorts-streetwear_53876-102182.jpg?w=826&t=st=1679844960~exp=1679845560~hmac=9250c11ea1c2c88691a554f8957db7333130371958cc314569cdab97bd299252"
-                                                                class="img-fluid rounded-3" alt="Product Ordered" style="width: 65px; margin-right: 5px">
+                                                <?php
+                                                $prevOrder = null;
+                                                $config = parse_ini_file('/var/www/private/db-config.ini');
+                                                $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+                                                $results = mysqli_query($conn, "SELECT * FROM `orderhistory` WHERE userid = " . $_SESSION["member-id"]) or die('query failed');
+                                                while ($row = mysqli_fetch_assoc($results)) {
+
+                                                    if (!empty($prevOrder) && $prevOrder != $row['purchasedate']) {
+                                                        ?>
+                                                        <hr/>
+                                                        <div class="d-flex justify-content-between">
+                                                            <div class="d-flex flex-row align-items-center">
+                                                                <h5 class="pl-3 mb-0"><?php echo $prevOrder; ?></h5>
+                                                            </div>
+                                                            <div class="d-flex flex-row align-items-center">
+                                                                <h5 class="pr-3 mb-0">$<?php echo $grand_total; ?></h5>
+                                                            </div>
                                                         </div>
-                                                        <div class="ms-3 px-2">
-                                                            <h5>Product Name</h5>
-                                                            <p class="small mb-0">Product Description</p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-3">
+                                                    <div class="card-body">
+
+                                                    <?php $grand_total = 0; } ?>
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <div>
+                                                                <img
+                                                                    src="<?php echo $row['image']; ?>"
+                                                                    class="img-fluid rounded-3" alt="Order item" style="width: 65px; margin-right: 5px">
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h5><?php echo $row['name']; ?></h5>
+                                                                <p class="small mb-0">Description</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <div style="width: 50px;">
+                                                                <h5 class="fw-normal mb-0"><?php echo $row['quantity']; ?></h5>
+                                                            </div>
+                                                            <div style="width: 80px;">
+                                                                <h5 class="mb-0">$<?php echo $sub_total = ($row['price'] * $row['quantity']); ?></h5>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <br/>
+                                                    <?php
+                                                    $grand_total += $sub_total;
+                                                    $prevOrder = $row['purchasedate'];
+                                                }
+                                                ?>
+                                                <hr/>
+                                                <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-row align-items-center">
-                                                        <div style="width: 50px;">
-                                                            <h5 class="fw-normal mb-0">2</h5>
-                                                        </div>
-                                                        <div style="width: 80px;">
-                                                            <h5 class="mb-0">$59.80</h5>
-                                                        </div>
+                                                        <h5 class="pl-3 mb-0"><?php echo $prevOrder ?></h5>
+                                                    </div>
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <h5 class="pr-3 mb-0">$<?php echo $grand_total; ?></h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -264,14 +303,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>                                    
                                 </div>
                                 <hr/>
-                                <form action="password_process.php" method="post">
+                                <form action="../processes/password_process.php" method="post">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-4">
                                             <!--Password Input-->
                                             <div class="form-group">
                                                 <label for="pwd">New Password:</label>
                                                 <input class="form-control" type="password" id="pwd" name="pwd"
-                                                        required name="pwd" placeholder="New Password">
+                                                       required name="pwd" placeholder="New Password">
                                             </div>
                                         </div>
                                     </div>
