@@ -28,6 +28,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                  Custom JS 
                 <script defer src="js/main.js"></script>-->
         <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
+         <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 
         
         <title>FastFash</title>

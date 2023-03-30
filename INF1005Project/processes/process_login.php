@@ -23,6 +23,7 @@ session_start();
           crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
     <script defer src="../js/main.js"></script>
+    <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 <body>
     <?php
     include "../Pages/nav.inc.php";
@@ -61,74 +62,70 @@ session_start();
             $_SESSION["street"] = $street;
             $_SESSION["unit"] = $unit;
             $_SESSION["postal"] = $postal;
-
-
-            } else {
-                echo"<h1>Opps!</h1>";
-                echo "<h4>The following input errors were detected:</h4>";
-                echo "<p>" . $errorMsg . "</p>";
-                echo("<button  onclick=\"location.href='../Pages/login.php'\">Return to Login</button>");
-            }
+        } else {
+            echo"<h1>Opps!</h1>";
+            echo "<h4>The following input errors were detected:</h4>";
+            echo "<p>" . $errorMsg . "</p>";
+            echo("<button  onclick=\"location.href='../Pages/login.php'\">Return to Login</button>");
+        }
 
 //Helper function that checks input for malicious or unwanted content.
-            function sanitize_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }
+        function sanitize_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
 
-            function authenticateUser() {
-                global $fname, $lname, $email, $hashed_password, $errorMsg, $success,$userid,$username,$block,$street,$unit,$postal;
+        function authenticateUser() {
+            global $fname, $lname, $email, $hashed_password, $errorMsg, $success, $userid, $username, $block, $street, $unit, $postal;
 // Create database connection.
-                $config = parse_ini_file('/var/www/private/db-config.ini');
-                $conn = new mysqli($config['servername'], $config['username'],
-                        $config['password'], $config['dbname']);
+            $config = parse_ini_file('/var/www/private/db-config.ini');
+            $conn = new mysqli($config['servername'], $config['username'],
+                    $config['password'], $config['dbname']);
 // Check connection
-                if ($conn->connect_error) {
-                    $errorMsg = "Connection failed: " . $conn->connect_error;
-                    $success = false;
-                } else {
+            if ($conn->connect_error) {
+                $errorMsg = "Connection failed: " . $conn->connect_error;
+                $success = false;
+            } else {
 // Prepare the statement:
-                    $stmt = $conn->prepare("SELECT * FROM users WHERE
+                $stmt = $conn->prepare("SELECT * FROM users WHERE
 email=?");
 // Bind & execute the query statement:
-                    $stmt->bind_param("s", $email);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    if ($result->num_rows > 0) {
+                $stmt->bind_param("s", $email);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if ($result->num_rows > 0) {
 // Note that email field is unique, so should only have
 // one row in the result set.
-                        $row = $result->fetch_assoc();
-                        $fname = $row["fname"];
-                        $lname = $row["lname"];
-                        $userid= $row["member_id"];
-                        $hashed_password = $row["password"];
-                        $username=$row["username"];
-                        $block=$row["block"];
-                        $street=$row["street"];
-                        $unit=$row["unit"];
-                        $postal=$row["postal"];
+                    $row = $result->fetch_assoc();
+                    $fname = $row["fname"];
+                    $lname = $row["lname"];
+                    $userid = $row["member_id"];
+                    $hashed_password = $row["password"];
+                    $username = $row["username"];
+                    $block = $row["block"];
+                    $street = $row["street"];
+                    $unit = $row["unit"];
+                    $postal = $row["postal"];
 
-                        
-                        
 // Check if the password matches:
-                        if (!password_verify($_POST["pwd"], $hashed_password)) {
+                    if (!password_verify($_POST["pwd"], $hashed_password)) {
 // Don't be too specific with the error message - hackers don't
 // need to know which one they got right or wrong. :)
-                            $errorMsg = "Email not found or password doesn't match...";
-                            $success = false;
-                        }
-                    } else {
                         $errorMsg = "Email not found or password doesn't match...";
                         $success = false;
                     }
-                    $stmt->close();
+                } else {
+                    $errorMsg = "Email not found or password doesn't match...";
+                    $success = false;
                 }
-                $conn->close();
+                $stmt->close();
             }
-            ?>
-        </main>
+            $conn->close();
+        }
+        ?>
+    </main>
         <?php
         include "../Pages/footer.inc.php";
         ?>

@@ -71,7 +71,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 <div class="row gx-lg-5">
                                     <div class="col-lg-6 col-xxl-4 mb-5">
                                         <div class="card bg-light border-0 h-100">
-                                            <div class="card-body shadow bg-white rounded-3 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                            <div class="card-body shadow bg-white text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                                 <h4 class="fs-4 fw-bold">Total Earned</h4>
                                                 <p class="mb-0">$</p>
                                             </div>
@@ -79,7 +79,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>
                                     <div class="col-lg-6 col-xxl-4 mb-5">
                                         <div class="card bg-light border-0 h-100">
-                                            <div class="card-body shadow bg-white rounded-3 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                            <div class="card-body shadow bg-white text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                                 <h4 class="fs-4 fw-bold">Total Registered Users</h4>
                                                 <p class="mb-0">No.</p>
                                             </div>
@@ -87,7 +87,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>
                                     <div class="col-lg-6 col-xxl-4 mb-5">
                                         <div class="card bg-light border-0 h-100">
-                                            <div class="card-body shadow bg-white rounded-3 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                            <div class="card-body shadow bg-white text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                                 <h4 class="fs-4 fw-bold">Number of sales</h4>
                                                 <p class="mb-0">No.</p>
                                             </div>
@@ -95,7 +95,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>
                                     <div class="col-lg-6 col-xxl-4 mb-5">
                                         <div class="card bg-light border-0 h-100">
-                                            <div class="card-body shadow bg-white rounded-3 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                            <div class="card-body shadow bg-white text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                                 <h4 class="fs-4 fw-bold">Average Earned Per Purchase</h4>
                                                 <p class="mb-0">We've created some custom feature boxes using Bootstrap icons!</p>
                                             </div>

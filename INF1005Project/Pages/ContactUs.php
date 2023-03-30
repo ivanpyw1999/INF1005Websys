@@ -6,33 +6,39 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html lang="en">
     <?php
 // Connect to MySQL
-$config = parse_ini_file('../../../private/db-config.ini');
-$conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+    $config = parse_ini_file('../../../private/db-config.ini');
+    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
 
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
 // Handle form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $subject = $_POST["subject"];
-  $message = $_POST["message"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $subject = $_POST["subject"];
+        $message = $_POST["message"];
 
-  // Insert data into feedback table
-  $sql = "INSERT INTO feedback (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
-  if ($conn->query($sql) === TRUE) {
-    echo "Thank you for your feedback!";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
+        // Insert data into feedback table
+        $sql = "INSERT INTO feedback (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
+        if ($conn->query($sql) === TRUE) {
+            echo '<div class = "alert alert-success alert-dismissible fade show" role = "alert">';
+            echo '<strong>Message Sent. We will get back to you as soon as we can!';
+            echo '<button type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">';
+            echo '<span aria-hidden = "true">&times';
+            echo "</span>";
+            echo "</button>";
+            echo "</div>;";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
 
-  // Close MySQL connection
-  $conn->close();
-}
-?>
+        // Close MySQL connection
+        $conn->close();
+    }
+    ?>
     <head>
         <link rel="stylesheet"
               href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -115,14 +121,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </form>
                     </div>
-                        <!--Grid column-->
+                    <!--Grid column-->
 
 
-                        </div>
-                        <!--Grid column-->
+                </div>
+                <!--Grid column-->
 
 
-                    </div>
+                </div>
 
             </section>
             <!--Section: Contact v.2-->

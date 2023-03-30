@@ -78,17 +78,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                     </div>
                                                     <div class="ms-3">
                                                         <h5><?php echo $fetch_cart['name']; ?></h5>
-                                                        <p class="small mb-0">256GB, Navy Blue</p>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0"><?php echo $fetch_cart['quantity']; ?></h5>
-                                                    </div>
                                                     <div style="width: 80px;">
-                                                        <h5 class="mb-0">$<?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></h5>
+                                                        <h5 class="mb-0">$<?php echo $sub_total = ($fetch_cart['price']); ?></h5>
                                                     </div>
-                                                    <a href="ShoppingCart.php?remove=<?php echo $fetch_cart['id']; ?>" style="color: #cecece;" class="delete-btn" onclick="return confirm('remove item from cart?');">remove><i class="fas fa-trash-alt"></i></a>
+                                                    <a href="ShoppingCart.php?remove=<?php echo $fetch_cart['id']; ?>" style="color: red;" class="delete-btn" onclick="return confirm('remove item from cart?');">remove><i class="fas fa-trash-alt"></i></a>
                                                 </div>
                                             </div>
                                             <?php
@@ -122,7 +118,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                                         <div class="d-flex justify-content-between">
                                             <p class="mb-2">Total(Incl. taxes)</p>
-                                            <p class="mb-2">$4818.00</p>
+                                            <p class="mb-2">$<?php if ($grand_total != 0) { echo $grand_total; } else { echo '0'; } ?></p>
                                         </div>
 
                                     </div>
@@ -134,15 +130,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                                 <hr style="height:1px;border:none;color:#333;background-color:#333;">
                                 <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Name: <?php echo $_SESSION["fname"]." ".$_SESSION["lname"];?></p>
+                                        <p class="mb-2"><?php echo $_SESSION["fname"]." ".$_SESSION["lname"];?></p>
                                     </div>
 
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Address: <?php echo $_SESSION["block"]." ".$_SESSION["street"]." ".$_SESSION["unit"];?></p>
+                                        <p class="mb-2"><?php echo $_SESSION["block"]." ".$_SESSION["street"]." ".$_SESSION["unit"];?></p>
                                     </div>
 
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Postal Code: <?php echo $_SESSION["postal"];?></p>
+                                        <p class="mb-2"><?php echo $_SESSION["postal"];?></p>
                                     </div>
 
 
