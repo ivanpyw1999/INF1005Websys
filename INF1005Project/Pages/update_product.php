@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION["member-id"] != '1') {
+if($_SESSION["member-id"]=='1'){
 // Get the updated details of the product
     $id = $_POST['id'];
     $name = $_POST['name'];

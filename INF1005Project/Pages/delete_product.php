@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION["member-id"]!='1'){
+if($_SESSION["member-id"]=='1'){
 // Get the ID of the product to delete
 $id = $_POST['id'];
 
