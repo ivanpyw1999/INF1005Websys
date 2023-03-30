@@ -9,6 +9,32 @@ if(isset($_GET['remove'])){
    mysqli_query($conn, "DELETE FROM `order` WHERE id = '$remove_id'") or die('query failed');
    header('location:ShoppingCart.php');
 }
+if(isset($_POST['order_btn'])){
+    $config = parse_ini_file('/var/www/private/db-config.ini');
+    $conn = new mysqli($config['servername'], $config['username'],
+            $config['password'], $config['dbname']);
+
+    $stmt=$conn->prepare("INSERT INTO world_of_pets.orderhistory (userid, name, price, quantity, image, purchasedate, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $cart_query = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id = '$user_id'") or die('query failed');
+// Loop through each item in the cart and insert into table
+while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
+     $t=time();
+     $date=date("Y-m-d",$t);
+    // Bind parameters and execute SQL statement
+    $stmt->bind_param("issssss",$user_id, $fetch_cart['name'], $fetch_cart['price'], $fetch_cart['quantity'], $fetch_cart['image'],$date, $fetch_cart['description']);
+    $stmt->execute();
+    mysqli_query($conn, "DELETE FROM `order` WHERE user_id = '$user_id'") or die('query failed');
+    
+}
+
+// Close statement and connection
+$stmt->close();
+$conn->close();
+echo "<script>
+    alert('Thank you for your order!');
+    window.location.href='Homepage.php';
+</script>";
+   }
 ?>
 <!DOCTYPE html>
 <!--
@@ -47,7 +73,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body class = "d-flex flex-column min-vh-100">
+    <body>
         <?php
         include "nav.inc.php";
         ?>
@@ -68,7 +94,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                 $config['password'], $config['dbname']);
                                         $cart_query = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id = '$user_id'") or die('query failed');
                                         while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
-                                            ?>                                
+                                            ?>
+                                
                                             <div class="d-flex justify-content-between">
                                                 <div class="d-flex flex-row align-items-center">
                                                     <div>
@@ -78,13 +105,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                     </div>
                                                     <div class="ms-3">
                                                         <h5><?php echo $fetch_cart['name']; ?></h5>
+                                                        <p class="small mb-0"><?php echo $fetch_cart['description']; ?></p>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 80px;">
-                                                        <h5 class="mb-0">$<?php echo $sub_total = ($fetch_cart['price']); ?></h5>
+                                                    <div style="width: 50px;">
+                                                        <h5 class="fw-normal mb-0"><?php echo $fetch_cart['quantity']; ?></h5>
                                                     </div>
-                                                    <a href="ShoppingCart.php?remove=<?php echo $fetch_cart['id']; ?>" style="color: red;" class="delete-btn" onclick="return confirm('remove item from cart?');">remove><i class="fas fa-trash-alt"></i></a>
+                                                    <div style="width: 80px;">
+                                                        <h5 class="mb-0">$<?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></h5>
+                                                    </div>
+                                                    <a href="ShoppingCart.php?remove=<?php echo $fetch_cart['id']; ?>" style="color:Red;" class="delete-btn" onclick="return confirm('remove item from cart?');">remove><i class="fas fa-trash-alt"></i></a>
                                                 </div>
                                             </div>
                                             <?php
@@ -106,7 +137,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                                         <div class="d-flex justify-content-between">
                                             <p class="mb-2">Taxes</p>
-                                            <p class="mb-2">$20.00</p>
+                                            <p class="mb-2">$FREE</p>
                                         </div>
 
                                         <div class="d-flex justify-content-between">
@@ -118,7 +149,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                                         <div class="d-flex justify-content-between">
                                             <p class="mb-2">Total(Incl. taxes)</p>
-                                            <p class="mb-2">$<?php if ($grand_total != 0) { echo $grand_total; } else { echo '0'; } ?></p>
+                                            <p class="mb-2">$<?php echo $grand_total; ?></p>
                                         </div>
 
                                     </div>
@@ -130,20 +161,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                                 <hr style="height:1px;border:none;color:#333;background-color:#333;">
                                 <div class="d-flex justify-content-between">
-                                        <p class="mb-2"><?php echo $_SESSION["fname"]." ".$_SESSION["lname"];?></p>
+                                        <p class="mb-2">Name: <?php echo $_SESSION["fname"]." ".$_SESSION["lname"];?></p>
                                     </div>
 
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2"><?php echo $_SESSION["block"]." ".$_SESSION["street"]." ".$_SESSION["unit"];?></p>
+                                        <p class="mb-2">Address: <?php echo $_SESSION["block"]." ".$_SESSION["street"]." ".$_SESSION["unit"];?></p>
                                     </div>
 
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2"><?php echo $_SESSION["postal"];?></p>
+                                        <p class="mb-2">Postal Code: <?php echo $_SESSION["postal"];?></p>
                                     </div>
 
 
 
-                                    <form class="mt-4">
+                                    <form class="mt-4" method="post">
                                         <div class="d-flex justify-content-between align-items-center mb-4">
                                             <h5 class="mb-0">PAYMENT DETAILS</h5>
                                         </div>
@@ -184,7 +215,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                                         </div>
                                         <div class ="row mb-12">
-                                            <button type="button" style="background-color: black" class="btn btn-secondary btn-lg btn-block">MAKE PAYMENT</button>
+                                            <input type="submit" type="button" style="background-color: black" name="order_btn"  class="btn btn-secondary btn-lg btn-block" value="MAKE PAYMENT">
                                         </div>
                                     </form>
 

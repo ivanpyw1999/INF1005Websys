@@ -15,13 +15,30 @@
         </div>
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-
-            <li class="nav-item ">
-                <a class="nav-link" href='register.php'>Register<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href='login.php'>Login<span class="sr-only">(current)</span></a>
-            </li>
+            <?php
+            if (!empty($_SESSION["username"])) {
+                if ($_SESSION["member-id"]=='1'){
+                  echo '<li class = "nav-item"><a class ="nav-link" href="AdminPage.php">Hello,ADMIN<span class="sr-only">(current)</span></a></li>';
+                  echo '<li class = "nav-item">
+                <a class="nav-link" href="logout.php">Log Out<span class="sr-only">(current)</span></a></li>';
+                }else{
+                echo '<li class = "nav-item"><a class ="nav-link" href="MyAccount.php">Hello,' . $_SESSION["username"] . '<span class="sr-only">(current)</span></a></li>';
+                echo '<li class = "nav-item">
+                <a class="nav-link" href="logout.php">Log Out<span class="sr-only">(current)</span></a></li>';
+                echo '<li class = "nav-item">
+                <a class="nav-link" href="ShoppingCart.php">Cart<span class="sr-only">(current)</span></a></li>';
+                }   
+            }else{
+   
+//put login form or include here.
+                echo '<li class = "nav-item">
+                <a class = "nav-link" href = "register.php">Register<span class="sr-only">(current)</a>
+                </li>';
+                echo '<li class = "nav-item">
+                <a class = "nav-link" href = "login.php">Log-In<span class="sr-only">(current)</span></a>
+                </li>';
+            }
+            ?>
 
             <!-- 
           <li class ="nav-item">

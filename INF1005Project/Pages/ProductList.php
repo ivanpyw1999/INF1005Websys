@@ -26,14 +26,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script defer src="js/main.js"></script>
-
+        <script defer src="../js/main.js"></script>
+        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
         <title>FastFash</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body class = "d-flex flex-column min-vh-100">
+    <body>
         <?php
         include "nav.inc.php";
         ?>
@@ -179,19 +179,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                             // Display the results as a grid
                             if ($results) {
-                                echo '<div class="row mt-3">';
+                                echo '<div class="productlistwrapper d-flex flex-wrap" id="productlistwrapper">';
                                 foreach ($results as $product) {
-                                    echo '<div class="col-sm-4">';
-                                    echo '<div class="card">';
-                                    echo '<img src="' . $product['image'] . '" class="card-img-top" alt="' . $product['name'] . '" width="200" height="300">';
-                                    echo '<div class="card-body">';
-                                    echo '<h5 class="card-title">' . $product['name'] . '</h5>';
-                                    echo '<p class="card-text">' . $product['description'] . '</p>';
-                                    echo '</div></div></div>';
+                                    echo '<div class="productcarddiv">';
+                                        echo '<div class="productcard shadow">';
+                                            echo '<div class="productcard shadow">';
+                                            
+                                                echo '<div class="productimgdiv">';
+                                                    echo '<img src="' . $product['image']. '" class="productimg alt="'. $product['name'] .'" width="200" height="300">';
+                                                echo '</div>';
+                                            
+                                                echo '<div class="productcardcontent">';
+                                                    echo '<div class="productcardleft">';
+                                                        echo '<div class="productnamediv">';
+                                                            echo '<p class="productname">'. $product['name'] . '</p>';
+                                                        echo '</div>';
+                                                        
+                                                        echo '<div class="productcostdiv">';
+                                                            echo '<p class="productname">$'. $product['price'] . '</p>';
+                                                        echo '</div>';
+                                                    echo '</div>';
+                                                    echo '<div class="productcardright">';
+                                                        echo '<div class="productsavebtndiv">';
+                                                            echo '<input class="productsavebtn" type="checkbox" name="productsave">';
+                                                        echo '</div>';
+                                                    echo '</div>';
+                                                echo '</div>';
+                                                
+                                            echo '</div>';
+                                            
+                                        echo '</div>'; 
+                                        
+                                    echo '</div>';
+
                                 }
                                 echo '</div>';
                             } else {
+                                echo'<div class="noproductresults" style="padding: 2rem;">';
                                 echo '<p>No results found.</p>';
+                                echo '</div>';
                             }
                         }
                         ?>

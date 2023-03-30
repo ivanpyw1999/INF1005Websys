@@ -1,4 +1,4 @@
-
+<?php session_start()?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -45,7 +45,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         ?>
 
         <main class="homepage" id='homepage'>
-            <div class='homepagediv' id='homepagediv'>
+            <div class='homepagediv vh-100' id='homepagediv'>
                 
                 <!-- This is the wrapper-->
                 <div class="homeaddiv">
@@ -58,16 +58,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <!-- Can add div later-->
                         <img src="../Images/homeadvertv2small.png" alt="Advertisement" class="homeadimg">
                         <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/adplaceholder1.jpg" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/adplaceholder2.jpg" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/adplaceholder3.jpg" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/adplaceholder4.jpg" alt="Advertisement" class="homeadimg">
                         <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertv2small.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/adplaceholder5.jpg" alt="Advertisement" class="homeadimg">
+                        <img src="../Images/adplaceholder6.jpg" alt="Advertisement" class="homeadimg">
                         
                     </div>
                     <div class="adcarouselbtndiv" id="adright">

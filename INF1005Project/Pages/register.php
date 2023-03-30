@@ -27,7 +27,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         crossorigin="anonymous">
                 </script>
                  Custom JS 
-                <script defer src="js/main.js"></script>-->
+                <script defer src="../js/main.js"></script>-->
         <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
 
         <title>FastFash</title>
@@ -52,7 +52,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <div class="card align-self-center bg-light border-light"> 
                             <div class="card-body">
                                 <h3 class="fw-bold mb-4 pt-2 text-center">Register</h3>
-                                <form action="temp.php" method="POST"> <!-- ../processes/process_register.php -->
+                                <form action="../processes/process_register.php" method="post"> <!-- ../processes/process_register.php -->
                                     <div class="row" style="margin-right: 0; margin-left:-15px;">
                                         <div class="col-sm-12 col-md-6">
                                             <!--Username Input--> 
@@ -122,7 +122,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     
                             <?php if($_GET) echo "<div class='alert alert-danger'>".$_GET['errorMsg']."</div>"; ?>
                                     <p class="text-center">
-                                        Already a member? Sign in <a href="/Pages/login.php">here</a>.
+                                        Already a member? Sign in <a href="login.php">here</a>.
 
                                         <!--Forget Password? Click <a href="">here</a>.-->
                                     </p>
