@@ -60,14 +60,11 @@ body{
     overflow: hidden;
 }
 
-
 .homeaddiv, .homeadcarousel, .homecatsdiv, .homecatcarousel{
     font-size: 0rem;
     cursor: pointer;
-
     width: 100%
 }
-
 
 .homecatheaderdiv{
     display: flex;

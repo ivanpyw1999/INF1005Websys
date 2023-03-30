@@ -12,8 +12,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="../css/homepage.css">
-
+        <link rel="stylesheet" href="../css/products.css">
         <!--jQuery-->
         <script defer
                 src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -39,142 +38,171 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         include "nav.inc.php";
         ?>
 
-        <main class="homepage" id='homepage'>
-            <div class='homepagediv' id='homepagediv'>
+
+
+        <main class ="productlistmain">
+            <div class='productlistdiv'>
                 
-                <div class="homeaddiv">
-                    <section class="homeadvert">
-                        <div class="homeadsliderdiv">
-                            
-                            <div class='homeadslideshow'>
+                <div class="productbodydiv">
+                    <div class="productfilterdiv">
+                        <div class="searchfilterdiv">
+                            <form class="form-inline searchfilterform" action="" method="POST">
+                                <div class="searchinputdiv">
+                                    <input class="form-control mr-sm-2 searchinput" type="search" name="searchTerm" placeholder="Search by name..." aria-label="Search">
+                                </div>
+                                <div class="searchbtndiv">
+                                    <button class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Filter</button>
+                                </div>
                                 
-                                <div class="homeadslider container-fluid">
-
-                                    <div class="homeindivaddiv col-12 col-lg-4">
-                                        <section class="homeindivadsection">
-                                            <div class="homeadone">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section> 
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                       <section class='homeindivadsection'>
-                                            <div class="homeadtwo">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section> 
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                        <section class='homeindivadsection'>
-                                            <div class="homeadthree">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section>
-                                    </div>
-
-                                    <div class="homeindivaddiv col-12 col-md-6 col-lg-4">
-                                        <section class="homeindivadsection">
-                                            <div class="homeadfour">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section> 
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                       <section class='homeindivadsection'>
-                                            <div class="homeadfive">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section> 
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                        <section class='homeindivadsection'>
-                                            <div class="homeadsix">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section>
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                        <section class='homeindivadsection'>
-                                            <div class="homeadseven">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section>
-                                    </div>
-                                    
-                                                                        <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                        <section class='homeindivadsection'>
-                                            <div class="homeadeight">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section>
-                                    </div>
-
-                                    <div class="homeindivaddiv col-12 col-md-6 col-lg-4">
-                                        <section class="homeindivadsection">
-                                            <div class="homeadnine">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section> 
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                       <section class='homeindivadsection'>
-                                            <div class="homeadtwelve">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section> 
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                        <section class='homeindivadsection'>
-                                            <div class="homeadsix">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section>
-                                    </div>
-
-                                    <div class='homeindivaddiv col-12 col-md-6 col-lg-4'>
-                                        <section class='homeindivadsection'>
-                                            <div class="homeadseven">
-                                                <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                                            </div>
-                                        </section>
-                                    </div>
-
-                                </div>
-                            
-                                <div class="sliderbtndiv">
-                                    <button class="sliderbtn" id="homesliderleft"></button>
-                                </div>
-
-                                <div class="sliderbtndiv">
-                                    <button class="sliderbtn" id="homesliderright"></button>
-                                </div>
-                            </div>
-
-                            <div class='slideshowbtns'>
                                 
-                            </div>
-
-                            
-
+                            </form>
                         </div>
-                    </section>                    
-                </div>
-                
-                <div class="homecatdiv">
-                    <section class="homecategories">
+                        
+                        <div class="filtersdiv">
+                            
+                            <div class="filtercatdiv">
+                                <div class="filtercattxtdiv">
+                                    <p class="filtercattxt">Categories</p>
+                                </div>
+                                
+                                <div class="filtercatcheckdiv">
+                                    <form class="filtercatcheck">
+                                        
+                                        <div class="filtercatoptiondiv">
+                                            <div class="filtercatboxdiv">
+                                                <input class="filtercatoption" type="checkbox">
+                                            </div>
+                                            <div class="filterboxtxtdiv">
+                                                <label class="filterboxtxt">Top</label>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="filtercatoptiondiv">
+                                            <div class="filtercatboxdiv">
+                                                <input class="filtercatoption" type="checkbox">
+                                            </div>
+                                            <div class="filterboxtxtdiv">
+                                                <label class="filterboxtxt">Bottom</label>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="filtercatoptiondiv">
+                                            <div class="filtercatboxdiv">
+                                                <input class="filtercatoption" type="checkbox">
+                                            </div>
+                                            <div class="filterboxtxtdiv">
+                                                <label class="filterboxtxt">Jeans</label>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="filtercatoptiondiv">
+                                            <div class="filtercatboxdiv">
+                                                <input class="filtercatoption" type="checkbox">
+                                            </div>
+                                            <div class="filterboxtxtdiv">
+                                                <label class="filterboxtxt">Dresses</label>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="filtercatoptiondiv">
+                                            <div class="filtercatboxdiv">
+                                                <input class="filtercatoption" type="checkbox">
+                                            </div>
+                                            <div class="filterboxtxtdiv">
+                                                <label class="filterboxtxt">Outerwear</label>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="filtercatoptiondiv">
+                                            <div class="filtercatboxdiv">
+                                                <input class="filtercatoption" type="checkbox">
+                                            </div>
+                                            <div class="filterboxtxtdiv">
+                                                <label class="filterboxtxt">Shoes</label>
+                                            </div>
+                                            
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="filterbtndiv">
+                                <button class="filterbtn">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productlistdiv">
+                        <div class="productheaderdiv">
+                            <h1 class="productheader">Product List</h1>
+                        </div>
+                                    <?php
+            $config = parse_ini_file('../../../private/db-config.ini');
+            $conn = new mysqli($config['servername'], $config['username'],
+            $config['password'], $config['dbname']);
 
-                    </section>
+            function searchProductsByName($searchTerm) {
+
+                global $conn;
+                $sql = "SELECT * FROM products WHERE name LIKE ?";
+                $stmt = $conn->prepare($sql);
+                $searchTerm = '%' . $searchTerm . '%';
+                $stmt->bind_param('s', $searchTerm);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if ($result->num_rows > 0) {
+                    $products = array();
+                    while ($row = $result->fetch_assoc()) {
+                        $products[] = $row;
+                    }
+                    return $products;
+                } else {
+                    return null;
+                }
+            }
+
+            // Check if form is submitted
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Get the search term from the form
+                $searchTerm = $_POST['searchTerm'];
+
+                // Call the searchProductsByName function
+                $results = searchProductsByName($searchTerm);
+
+                // Display the results as a grid
+                if ($results) {
+                    echo '<div class="row mt-3">';
+                    foreach ($results as $product) {
+                        echo '<div class="productcarddiv">';
+                            echo '<div class="productcard shadow">';
+                                echo '<div class="productcard shadow">';
+                                echo '<div class="productimgdiv">';
+                                echo '<img src="' . $product['image']. '" class="productimg">';
+                                echo '</div>';
+                        echo '<div class="card-body">';
+                        echo '<h5 class="card-title">' . $product['name'] . '</h5>';
+                        echo '<p class="card-text">' . $product['description'] . '</p>';
+                        echo '</div></div></div>';
+                    }
+                    echo '</div>';
+                } else {
+                    echo '<p>No results found.</p>';
+                }
+            }
+            ?>
+
+                    </div>
                 </div>
-                
             </div>
-            
+                 
         </main>
 
 

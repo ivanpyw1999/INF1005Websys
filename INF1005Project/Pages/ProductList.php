@@ -26,8 +26,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 crossorigin="anonymous">
         </script>
         <!-- Custom JS -->
-        <script defer src="js/main.js"></script>
-
+        <script defer src="../js/main.js"></script>
+        <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
         <title>FastFash</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,32 +42,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         <main class ="productlistmain">
             <div class='productlistdiv'>
-                
+
                 <div class="productbodydiv">
                     <div class="productfilterdiv">
                         <div class="searchfilterdiv">
-                            <form class="form-inline searchfilterform">
+                            <form class="form-inline searchfilterform" action="" method="POST">
                                 <div class="searchinputdiv">
-                                    <input class="form-control mr-sm-2 searchinput" type="search" placeholder="Search" aria-label="Search">
+                                    <input class="form-control mr-sm-2 searchinput" type="search" name="searchTerm" placeholder="Search by name..." aria-label="Search">
                                 </div>
                                 <div class="searchbtndiv">
                                     <button class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Filter</button>
                                 </div>
-                                
-                                
+
+
                             </form>
                         </div>
-                        
+
                         <div class="filtersdiv">
-                            
+
                             <div class="filtercatdiv">
                                 <div class="filtercattxtdiv">
                                     <p class="filtercattxt">Categories</p>
                                 </div>
-                                
+
                                 <div class="filtercatcheckdiv">
                                     <form class="filtercatcheck">
-                                        
+
                                         <div class="filtercatoptiondiv">
                                             <div class="filtercatboxdiv">
                                                 <input class="filtercatoption" type="checkbox">
@@ -75,9 +75,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             <div class="filterboxtxtdiv">
                                                 <label class="filterboxtxt">Top</label>
                                             </div>
-                                            
+
                                         </div>
-                                        
+
                                         <div class="filtercatoptiondiv">
                                             <div class="filtercatboxdiv">
                                                 <input class="filtercatoption" type="checkbox">
@@ -85,9 +85,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             <div class="filterboxtxtdiv">
                                                 <label class="filterboxtxt">Bottom</label>
                                             </div>
-                                            
+
                                         </div>
-                                        
+
                                         <div class="filtercatoptiondiv">
                                             <div class="filtercatboxdiv">
                                                 <input class="filtercatoption" type="checkbox">
@@ -95,9 +95,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             <div class="filterboxtxtdiv">
                                                 <label class="filterboxtxt">Jeans</label>
                                             </div>
-                                            
+
                                         </div>
-                                        
+
                                         <div class="filtercatoptiondiv">
                                             <div class="filtercatboxdiv">
                                                 <input class="filtercatoption" type="checkbox">
@@ -105,9 +105,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             <div class="filterboxtxtdiv">
                                                 <label class="filterboxtxt">Dresses</label>
                                             </div>
-                                            
+
                                         </div>
-                                        
+
                                         <div class="filtercatoptiondiv">
                                             <div class="filtercatboxdiv">
                                                 <input class="filtercatoption" type="checkbox">
@@ -115,9 +115,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             <div class="filterboxtxtdiv">
                                                 <label class="filterboxtxt">Outerwear</label>
                                             </div>
-                                            
+
                                         </div>
-                                        
+
                                         <div class="filtercatoptiondiv">
                                             <div class="filtercatboxdiv">
                                                 <input class="filtercatoption" type="checkbox">
@@ -125,14 +125,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             <div class="filterboxtxtdiv">
                                                 <label class="filterboxtxt">Shoes</label>
                                             </div>
-                                            
+
                                         </div>
                                     </form>
-                                    
+
                                 </div>
-                                
+
                             </div>
-                            
+
                             <div class="filterbtndiv">
                                 <button class="filterbtn">
                                     Apply
@@ -144,224 +144,88 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <div class="productheaderdiv">
                             <h1 class="productheader">Product List</h1>
                         </div>
-                        <div class="productlistwrapper d-flex flex-wrap">
-                            
-                            <div class="productcarddiv">
-                                <div class="productcard shadow">
-                                    <div class="productimgdiv">
-                                        <img src="../Images/categories/stripedtop.png" class="productimg">
-                                    </div>
-                                
-                                    <div class="productcardcontent">
-                                        <div class="productcardleft">
-                                            <div class="productnamediv">
-                                                <p class="productname">
-                                                    Striped Shirt
-                                                </p>
-                                            </div>
+                        <?php
+                        $config = parse_ini_file('../../../private/db-config.ini');
+                        $conn = new mysqli($config['servername'], $config['username'],
+                                $config['password'], $config['dbname']);
 
-                                            <div class="productcostdiv">
-                                                <p class="productcost">
-                                                    $7.00
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="productcardright">
-                                            <div class="productsavebtndiv">
-                                                <input class="productsavebtn" type="checkbox" name="productsave">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="productcarddiv">
-                                <div class="productcard shadow">
-                                    <div class="productimgdiv">
-                                        <img src="../Images/categories/stripedtop.png" class="productimg">
-                                    </div>
-                                
-                                    <div class="productcardcontent">
-                                        <div class="productcardleft">
-                                            <div class="productnamediv">
-                                                <p class="productname">
-                                                    Striped Shirt
-                                                </p>
-                                            </div>
+                        function searchProductsByName($searchTerm) {
 
-                                            <div class="productcostdiv">
-                                                <p class="productcost">
-                                                    $7.00
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="productcardright">
-                                            <div class="productsavebtndiv">
-                                                <input class="productsavebtn" type="checkbox" name="productsave">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="productcarddiv">
-                                <div class="productcard shadow">
-                                    <div class="productimgdiv">
-                                        <img src="../Images/categories/stripedtop.png" class="productimg">
-                                    </div>
-                                
-                                    <div class="productcardcontent">
-                                        <div class="productcardleft">
-                                            <div class="productnamediv">
-                                                <p class="productname">
-                                                    Striped Shirt
-                                                </p>
-                                            </div>
+                            global $conn;
+                            $sql = "SELECT * FROM products WHERE name LIKE ?";
+                            $stmt = $conn->prepare($sql);
+                            $searchTerm = '%' . $searchTerm . '%';
+                            $stmt->bind_param('s', $searchTerm);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            if ($result->num_rows > 0) {
+                                $products = array();
+                                while ($row = $result->fetch_assoc()) {
+                                    $products[] = $row;
+                                }
+                                return $products;
+                            } else {
+                                return null;
+                            }
+                        }
 
-                                            <div class="productcostdiv">
-                                                <p class="productcost">
-                                                    $7.00
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="productcardright">
-                                            <div class="productsavebtndiv">
-                                                <input class="productsavebtn" type="checkbox" name="productsave">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="productcarddiv">
-                                <div class="productcard shadow">
-                                    <div class="productimgdiv">
-                                        <img src="../Images/categories/stripedtop.png" class="productimg">
-                                    </div>
-                                
-                                    <div class="productcardcontent">
-                                        <div class="productcardleft">
-                                            <div class="productnamediv">
-                                                <p class="productname">
-                                                    Striped Shirt
-                                                </p>
-                                            </div>
+                        // Check if form is submitted
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                            // Get the search term from the form
+                            $searchTerm = $_POST['searchTerm'];
 
-                                            <div class="productcostdiv">
-                                                <p class="productcost">
-                                                    $7.00
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="productcardright">
-                                            <div class="productsavebtndiv">
-                                                <input class="productsavebtn" type="checkbox" name="productsave">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="productcarddiv">
-                                <div class="productcard shadow">
-                                    <div class="productimgdiv">
-                                        <img src="../Images/categories/stripedtop.png" class="productimg">
-                                    </div>
-                                
-                                    <div class="productcardcontent">
-                                        <div class="productcardleft">
-                                            <div class="productnamediv">
-                                                <p class="productname">
-                                                    Striped Shirt
-                                                </p>
-                                            </div>
+                            // Call the searchProductsByName function
+                            $results = searchProductsByName($searchTerm);
 
-                                            <div class="productcostdiv">
-                                                <p class="productcost">
-                                                    $7.00
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="productcardright">
-                                            <div class="productsavebtndiv">
-                                                <input class="productsavebtn" type="checkbox" name="productsave">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            
-                            <div class="productcarddiv">
-                                <div class="productcard shadow">
-                                    <div class="productimgdiv">
-                                        <img src="../Images/categories/stripedtop.png" class="productimg">
-                                    </div>
-                                
-                                    <div class="productcardcontent">
-                                        <div class="productcardleft">
-                                            <div class="productnamediv">
-                                                <p class="productname">
-                                                    Striped Shirt
-                                                </p>
-                                            </div>
+                            // Display the results as a grid
+                            if ($results) {
+                                echo '<div class="productlistwrapper d-flex flex-wrap" id="productlistwrapper">';
+                                foreach ($results as $product) {
+                                    echo '<div class="productcarddiv">';
+                                        echo '<div class="productcard shadow">';
+                                            echo '<div class="productcard shadow">';
+                                            
+                                                echo '<div class="productimgdiv">';
+                                                    echo '<img src="' . $product['image']. '" class="productimg alt="'. $product['name'] .'" width="200" height="300">';
+                                                echo '</div>';
+                                            
+                                                echo '<div class="productcardcontent">';
+                                                    echo '<div class="productcardleft">';
+                                                        echo '<div class="productnamediv">';
+                                                            echo '<p class="productname">'. $product['name'] . '</p>';
+                                                        echo '</div>';
+                                                        
+                                                        echo '<div class="productcostdiv">';
+                                                            echo '<p class="productname">$'. $product['price'] . '</p>';
+                                                        echo '</div>';
+                                                    echo '</div>';
+                                                    echo '<div class="productcardright">';
+                                                        echo '<div class="productsavebtndiv">';
+                                                            echo '<input class="productsavebtn" type="checkbox" name="productsave">';
+                                                        echo '</div>';
+                                                    echo '</div>';
+                                                echo '</div>';
+                                                
+                                            echo '</div>';
+                                            
+                                        echo '</div>'; 
+                                        
+                                    echo '</div>';
 
-                                            <div class="productcostdiv">
-                                                <p class="productcost">
-                                                    $7.00
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="productcardright">
-                                            <div class="productsavebtndiv">
-                                                <input class="productsavebtn" type="checkbox" name="productsave">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="productcarddiv">
-                                <div class="productcard shadow">
-                                    <div class="productimgdiv">
-                                        <img src="../Images/categories/stripedtop.png" class="productimg">
-                                    </div>
-                                
-                                    <div class="productcardcontent">
-                                        <div class="productcardleft">
-                                            <div class="productnamediv">
-                                                <p class="productname">
-                                                    Striped Shirt
-                                                </p>
-                                            </div>
+                                }
+                                echo '</div>';
+                            } else {
+                                echo'<div class="noproductresults" style="padding: 2rem;">';
+                                echo '<p>No results found.</p>';
+                                echo '</div>';
+                            }
+                        }
+                        ?>
 
-                                            <div class="productcostdiv">
-                                                <p class="productcost">
-                                                    $7.00
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="productcardright">
-                                            <div class="productsavebtndiv">
-                                                <input class="productsavebtn" type="checkbox" name="productsave">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
                     </div>
                 </div>
             </div>
-                 
+
         </main>
 
 

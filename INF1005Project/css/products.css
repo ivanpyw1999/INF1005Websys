@@ -7,7 +7,7 @@
 
 .productlistdiv{
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     flex-direction: column;
     
@@ -22,7 +22,7 @@
 .productfilterdiv{
     min-width: 20rem;
     width: 30%;
-    background-color: ##fffdf7;
+    background-color: #fffdf7;
     
 }
 
@@ -128,13 +128,6 @@
     font-weight: 600;
 }
 
-.productlistdiv{
-    width: 100%;
-    flex-direction: column;
-    height: 100%;
-    display: flex;
-    
-}
 
 .productheaderdiv{
     padding: 2rem;

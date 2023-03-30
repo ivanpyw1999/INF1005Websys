@@ -4,3 +4,13 @@
  */
 
 
+function createCard(id, name, imgurl, category, price){
+    
+    const list = document.querySelector("#productlistwrapper");
+    const productcarddiv = document.createElement("div");
+    productcarddiv.id = id;
+    const productcard = document.createElement("div");
+    const productimgdiv = document.createElement("div");
+    
+};
+
