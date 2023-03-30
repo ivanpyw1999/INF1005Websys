@@ -40,7 +40,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         include "nav.inc.php";
         ?>
         <main class="container-fluid p-0 m-0">
-            <div class="row">
+            <div class="row" style="margin-right: 0; margin-left:-15px;">
                 <div class="col-md-5 d-none d-md-block d-lg-block">
                     <div class="text-center register-background">
                         <img src="/Images/FashionLogo.png" class="img-fluid p-3" style="height:15%" alt="Responsive image">
@@ -53,7 +53,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <div class="card-body">
                                 <h3 class="fw-bold mb-4 pt-2 text-center">Register</h3>
                                 <form action="temp.php" method="POST"> <!-- ../processes/process_register.php -->
-                                    <div class="row">
+                                    <div class="row" style="margin-right: 0; margin-left:-15px;">
                                         <div class="col-sm-12 col-md-6">
                                             <!--Username Input--> 
                                             <div class="form-group text-left">
