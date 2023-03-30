@@ -12,7 +12,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
-        <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/accountPages.css">
 
         <!--jQuery-->
@@ -35,7 +34,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body mh-100>
+   <body class = "d-flex flex-column min-vh-100">
         <?php
         include "nav.inc.php";
         ?>
@@ -291,5 +290,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         include "footer.inc.php";
         ?>
 
-    </body>z
+    </body>
 </html>
