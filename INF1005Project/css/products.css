@@ -5,9 +5,15 @@
     display: flex;
 }
 
+.productsdiv{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
 .productlistdiv{
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     flex-direction: column;
     
@@ -15,13 +21,22 @@
 
 .productbodydiv{
     display: flex;
-    height: 100%;
-    width: 100%;
+    flex-direction: column;
+    min-width: 20rem;
+    width: 30%;
+    background-color: lavender;
+}
+
+.filtersdiv{
+    padding: 2rem;
+    padding-top: 1rem;
+    margin: 0;
+    padding-bottom: 0.5rem;
 }
 
 .productfilterdiv{
-    min-width: 20rem;
-    width: 30%;
+/*    min-width: 20rem;
+    width: 30%;*/
     background-color: #fffdf7;
     
 }
@@ -33,8 +48,6 @@
 .searchfilterform{
     padding: 1rem;
 }
-
-
 .searchinputdiv{
     padding: 1rem;
     padding-bottom: 0.5rem;
@@ -45,10 +58,14 @@
     
 }
 
+
 .searchbtndiv{
-    padding: 1rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0.5rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding-top: 1rem;
 }
 
 .searchbtn{
@@ -56,10 +73,7 @@
 }
 
 
-.filtersdiv{
-    padding: 2rem;
-    padding-top: 1rem;
-}
+
 
 .filtercatdiv{
     
@@ -128,13 +142,6 @@
     font-weight: 600;
 }
 
-.productlistdiv{
-    width: 100%;
-    flex-direction: column;
-    height: 100vh;
-    display: flex;
-    
-}
 
 .productheaderdiv{
     padding: 2rem;
@@ -169,7 +176,6 @@
 
 .productcardcontent{
     display: flex;
-    justify-content: space-between;
 }
 .productcard{
     border-radius: 0.7rem;
@@ -180,7 +186,12 @@
 }
 
 .productnamediv{
-    
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.productcarddetails{
+    border-radius: 0 0 0.7rem 0.7rem;
 }
 
 .productname{
@@ -216,3 +227,6 @@
     
 }
 
+.productdescrip{
+    border-radius: 0 0 0.7rem 0.7rem;
+}

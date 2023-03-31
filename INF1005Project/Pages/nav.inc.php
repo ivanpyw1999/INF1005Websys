@@ -25,7 +25,7 @@
   <div class="collapse navbar-collapse" id="navbar-list-4">
     <ul class="navbar-nav">
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="../Images/account.png" style="width:25px; height: 25px" alt="account dropdown" class="rounded-circle">
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
