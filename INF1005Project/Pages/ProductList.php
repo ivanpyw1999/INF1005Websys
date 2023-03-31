@@ -35,192 +35,183 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     <body>
         <?php
+        session_start();
         include "nav.inc.php";
         ?>
 
 
 
         <main class ="productlistmain">
-            <div class='productlistdiv'>
+            <div class='productsdiv d-flex vw-100 h-100'>
 
                 <div class="productbodydiv">
-                    <div class="productfilterdiv">
-                        <div class="searchfilterdiv">
-                            <form class="form-inline searchfilterform" action="" method="POST">
-                                <div class="searchinputdiv">
-                                    <input class="form-control mr-sm-2 searchinput" type="search" name="searchTerm" placeholder="Search by name..." aria-label="Search">
-                                </div>
-                                <div class="searchbtndiv">
-                                    <button class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Filter</button>
-                                </div>
 
+                    <div class="productfilterdiv container-fluid">
 
-                            </form>
-                        </div>
+                        <form action="ProductList.php" class="form-group searchinputdiv">
+                            <input class="form-control mr-sm-2 searchinput" type="search" name="search" placeholder="Search products.." aria-label="Search">
+                            </div>
+                            <div class="form-group filtersdiv">
+                                <div class="filtercatdiv">
 
-                        <div class="filtersdiv">
+                                    <div class="filtercattxtdiv">
+                                        <p class="filtercattxt">Categories</p>
+                                    </div>
 
-                            <div class="filtercatdiv">
-                                <div class="filtercattxtdiv">
-                                    <p class="filtercattxt">Categories</p>
-                                </div>
-
-                                <div class="filtercatcheckdiv">
-                                    <form class="filtercatcheck">
-
-                                        <div class="filtercatoptiondiv">
-                                            <div class="filtercatboxdiv">
-                                                <input class="filtercatoption" type="checkbox">
-                                            </div>
-                                            <div class="filterboxtxtdiv">
-                                                <label class="filterboxtxt">Top</label>
-                                            </div>
-
+                                    <div class="filtercatoptiondiv form-check form-check-inline">
+                                        <div class="filtercatboxdiv">
+                                            <input class="filtercatoption form-check-input" id="top" type="checkbox" name="category[]" value="Top">
                                         </div>
-
-                                        <div class="filtercatoptiondiv">
-                                            <div class="filtercatboxdiv">
-                                                <input class="filtercatoption" type="checkbox">
-                                            </div>
-                                            <div class="filterboxtxtdiv">
-                                                <label class="filterboxtxt">Bottom</label>
-                                            </div>
-
+                                        <div class="filterboxtxtdiv">
+                                            <label class="filterboxtxt form-check-label" for="top">Top</label>
                                         </div>
+                                    </div>
 
-                                        <div class="filtercatoptiondiv">
-                                            <div class="filtercatboxdiv">
-                                                <input class="filtercatoption" type="checkbox">
-                                            </div>
-                                            <div class="filterboxtxtdiv">
-                                                <label class="filterboxtxt">Jeans</label>
-                                            </div>
-
+                                    <div class="filtercatoptiondiv form-check form-check-inline">
+                                        <div class="filtercatboxdiv">
+                                            <input class="filtercatoption form-check-input" id="bottom" type="checkbox" name="category[]" value="Bottom">
                                         </div>
-
-                                        <div class="filtercatoptiondiv">
-                                            <div class="filtercatboxdiv">
-                                                <input class="filtercatoption" type="checkbox">
-                                            </div>
-                                            <div class="filterboxtxtdiv">
-                                                <label class="filterboxtxt">Dresses</label>
-                                            </div>
-
+                                        <div class="filterboxtxtdiv">
+                                            <label class="filterboxtxt form-check-label" for="bottom">Bottom</label>
                                         </div>
+                                    </div>
 
-                                        <div class="filtercatoptiondiv">
-                                            <div class="filtercatboxdiv">
-                                                <input class="filtercatoption" type="checkbox">
-                                            </div>
-                                            <div class="filterboxtxtdiv">
-                                                <label class="filterboxtxt">Outerwear</label>
-                                            </div>
-
+                                    <div class="filtercatoptiondiv form-check form-check-inline">
+                                        <div class="filtercatboxdiv">
+                                            <input class="filtercatoption form-check-input" id="jeans" type="checkbox" name="category[]" value="Jeans">
                                         </div>
-
-                                        <div class="filtercatoptiondiv">
-                                            <div class="filtercatboxdiv">
-                                                <input class="filtercatoption" type="checkbox">
-                                            </div>
-                                            <div class="filterboxtxtdiv">
-                                                <label class="filterboxtxt">Shoes</label>
-                                            </div>
-
+                                        <div class="filterboxtxtdiv">
+                                            <label class="filterboxtxt form-check-label" for="jeans">Jeans</label>
                                         </div>
-                                    </form>
+                                    </div>
+
+                                    <div class="filtercatoptiondiv form-check form-check-inline">
+                                        <div class="filtercatboxdiv">
+                                            <input class="filtercatoption form-check-input" id="outerwear" type="checkbox" name="category[]" value="Outerwear">
+                                        </div>
+                                        <div class="filterboxtxtdiv">
+                                            <label class="filterboxtxt form-check-label" for="outerwear">Outerwear</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filtercatoptiondiv form-check form-check-inline">
+                                        <div class="filtercatboxdiv">
+                                            <input class="filtercatoption form-check-input" id="shoes" type="checkbox" name="category[]" value="Shoes">
+                                        </div>
+                                        <div class="filterboxtxtdiv">
+                                            <label class="filterboxtxt form-check-label" for="shoes">Shoes</label>
+                                        </div>
+                                    </div>
 
                                 </div>
-
                             </div>
 
-                            <div class="filterbtndiv">
-                                <button class="filterbtn">
-                                    Apply
-                                </button>
-                            </div>
-                        </div>
+                            <!--                            <div class="searchbtndiv">
+                                                            <button class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Search</button>
+                                                        </div>-->
+                        </form>
+
                     </div>
-                    <div class="productlistdiv">
+                    <div class="productlistdiv container">
                         <div class="productheaderdiv">
                             <h1 class="productheader">Product List</h1>
                         </div>
-                        <?php
-                        $config = parse_ini_file('../../../private/db-config.ini');
-                        $conn = new mysqli($config['servername'], $config['username'],
-                                $config['password'], $config['dbname']);
+                        <div class="productlistwrapper d-flex flex-wrap row" id="productlistwrapper">
+                            <?php
+                            // Retrieve the search term and category filters from the URL parameters
+                            $searchTerm = $_GET["search"];
+                            $categoryFilters = $_GET["category"];
 
-                        function searchProductsByName($searchTerm) {
-
-                            global $conn;
+                            // Build the SQL query
                             $sql = "SELECT * FROM products WHERE name LIKE ?";
-                            $stmt = $conn->prepare($sql);
-                            $searchTerm = '%' . $searchTerm . '%';
-                            $stmt->bind_param('s', $searchTerm);
-                            $stmt->execute();
-                            $result = $stmt->get_result();
-                            if ($result->num_rows > 0) {
-                                $products = array();
-                                while ($row = $result->fetch_assoc()) {
-                                    $products[] = $row;
-                                }
-                                return $products;
-                            } else {
-                                return null;
+
+                            $types = "s";
+                            $params = array("%$searchTerm%");
+
+                            if (!empty($categoryFilters)) {
+                                $inClause = implode(",", array_fill(0, count($categoryFilters), "?"));
+                                $sql .= " AND category IN ($inClause)";
+
+                                $types .= str_repeat("s", count($categoryFilters));
+                                $params = array_merge($params, $categoryFilters);
                             }
-                        }
 
-                        // Check if form is submitted
-                        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                            // Get the search term from the form
-                            $searchTerm = $_POST['searchTerm'];
+                            $config = parse_ini_file('../../../private/db-config.ini');
+                            $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
 
-                            // Call the searchProductsByName function
-                            $results = searchProductsByName($searchTerm);
+                            // Check the database connection
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                            }
 
-                            // Display the results as a grid
-                            if ($results) {
-                                echo '<div class="productlistwrapper d-flex flex-wrap" id="productlistwrapper">';
-                                foreach ($results as $product) {
-                                    echo '<div class="productcarddiv">';
-                                        echo '<div class="productcard shadow">';
-                                            echo '<div class="productcard shadow">';
-                                            
-                                                echo '<div class="productimgdiv">';
-                                                    echo '<img src="' . $product['image']. '" class="productimg alt="'. $product['name'] .'" width="200" height="300">';
-                                                echo '</div>';
-                                            
-                                                echo '<div class="productcardcontent">';
-                                                    echo '<div class="productcardleft">';
-                                                        echo '<div class="productnamediv">';
-                                                            echo '<p class="productname">'. $product['name'] . '</p>';
-                                                        echo '</div>';
-                                                        
-                                                        echo '<div class="productcostdiv">';
-                                                            echo '<p class="productname">$'. $product['price'] . '</p>';
-                                                        echo '</div>';
-                                                    echo '</div>';
-                                                    echo '<div class="productcardright">';
-                                                        echo '<div class="productsavebtndiv">';
-                                                            echo '<input class="productsavebtn" type="checkbox" name="productsave">';
-                                                        echo '</div>';
-                                                    echo '</div>';
-                                                echo '</div>';
-                                                
-                                            echo '</div>';
-                                            
-                                        echo '</div>'; 
-                                        
+                            // Prepare the SQL statement
+                            $stmt = $conn->prepare($sql);
+                            if (!$stmt) {
+                                echo "Error preparing statement: " . $conn->error;
+                                exit;
+                            }
+
+                            // Bind the parameters
+                            if (!empty($params)) {
+                                $stmt->bind_param($types, ...$params);
+                            }
+
+                            // Execute the SQL query
+                            $result = $stmt->execute();
+                            if (!$result) {
+                                echo "Error executing statement: " . $stmt->error;
+                                exit;
+                            }
+
+                            // Get the result set
+                            $result = $stmt->get_result();
+
+                            // Display the results
+                            if ($result->num_rows > 0) {
+
+                                while ($row = $result->fetch_assoc()) {
+
+                                    echo '<div class="productcarddiv col-md-4 mb-4">'; //Div 1 Start
+
+                                    echo '<a href="SpecificProductPage.php?id=' . $row['id'] . '">';
+                                    echo '<div class="productcard shadow card">'; //Div 2 Start
+                                    echo '<div class="productimgdiv">'; //Div 3 Start
+                                    echo '<img src="' . $row['image'] . '" class="productimg alt="' . $row['name'] . '" width="200" height="300">';
+                                    echo '</div>'; //Div 3 End
+
+                                    echo '<div class="productcardcontent">'; //Div 4 Start
+                                    echo '<div class="productnamediv">'; //Div 6 Start
+                                    echo '<p class="productname">' . $row['name'] . '</p>';
+                                    echo '</div>'; //Div 5 End
+
+                                    echo '</div>'; //Div 4 End
+
+                                    echo '<div class="productcarddetails">'; //Div 9 Start
+
+                                    echo "<ul class='list-group list-group-flush'>";
+                                    echo '<div class="productcostdiv">';
+                                    echo '<li class="list-group-item productcost">Price: $' . number_format($row["price"], 2) . '</li>';
+                                    echo '</div>';
+                                    echo "</ul>";
+
                                     echo '</div>';
 
+                                    echo '</div>'; //Div 2 End
+                                    echo '</a>';
+
+                                    echo '</div>'; //Div 1 End
                                 }
-                                echo '</div>';
                             } else {
                                 echo'<div class="noproductresults" style="padding: 2rem;">';
                                 echo '<p>No results found.</p>';
                                 echo '</div>';
                             }
-                        }
-                        ?>
+
+                            // Close the database connection
+                            $stmt->close();
+                            $conn->close();
+                            ?>
+                        </div>
 
                     </div>
                 </div>
@@ -230,9 +221,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
 
 
-        <?php
-        include "footer.inc.php";
-        ?>
+<?php
+include "footer.inc.php";
+?>
 
     </body>
 
