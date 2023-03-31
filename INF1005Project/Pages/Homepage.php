@@ -139,109 +139,102 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         
                     </div>
                     
-                    <div class="homecategorywrapper h-100 flex-wrap swiper">
+                    <div class="homecategorywrapper h-100 flex-wrap">
 
                         <!-- This is the slideshow carousel-->
-                        <div class="homecatsection row " id="homecatsection">
+                        <div class="homecatsection row flex-wrap" id="homecatsection">
                             
-                            <div class="card-wrapper swiper-wrapper">
-                                
-                                <div class="catdivwrapper">
-                                    <div class='homecatdiv card'>
-                                        <div class="homecatimgdiv">
-                                                <img src="../Images/productimgs/yellowshirt.png" alt="Top Category" class="homecatimg">
-                                        </div>
-
-                                        <div class="homecattxtdiv">
-                                            <p class="homecattxt">
-                                                TOP
-                                            </p>
-                                        </div>        
-
+                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
+                                <div class='homecatdiv card'>
+                                    <div class="homecatimgdiv">
+                                            <img src="../Images/productimgs/yellowshirt.png" alt="Top Category" class="homecatimg">
                                     </div>
+
+                                    <div class="homecattxtdiv">
+                                        <p class="homecattxt">
+                                            TOP
+                                        </p>
+                                    </div>        
+
                                 </div>
+                            </div>
 
-                                <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
-                                    <div class='homecatdiv card'>
-                                        <div class="homecatimgdiv">
-                                            <img src="../Images/productimgs/finalpantsfront.png" alt="Bottom Category" class="homecatimg">
-                                        </div>
-
-                                        <div class="homecattxtdiv">
-                                            <p class="homecattxt">
-                                                BOTTOM
-                                            </p>
-                                        </div>      
-
+                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
+                                <div class='homecatdiv card'>
+                                    <div class="homecatimgdiv">
+                                        <img src="../Images/productimgs/finalpantsfront.png" alt="Bottom Category" class="homecatimg">
                                     </div>
+
+                                    <div class="homecattxtdiv">
+                                        <p class="homecattxt">
+                                            BOTTOM
+                                        </p>
+                                    </div>      
+
                                 </div>
+                            </div>
 
-                                <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
-                                    <div class='homecatdiv card'>
-                                        <div class="homecatimgdiv">
-                                            <img src="../Images/productimgs/manyjeans.png" alt="Jeans Category" class="homecatimg">
-                                        </div>
-
-                                        <div class="homecattxtdiv">
-                                            <p class="homecattxt">
-                                                JEANS
-                                            </p>
-                                        </div>      
-
+                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
+                                <div class='homecatdiv card'>
+                                    <div class="homecatimgdiv">
+                                        <img src="../Images/productimgs/manyjeans.png" alt="Jeans Category" class="homecatimg">
                                     </div>
+
+                                    <div class="homecattxtdiv">
+                                        <p class="homecattxt">
+                                            JEANS
+                                        </p>
+                                    </div>      
+
                                 </div>
+                            </div>
 
-                                <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
-                                    <div class='homecatdiv card'>
-                                        <div class="homecatimgdiv">
-                                            <img src="../Images/productimgs/finaldressfront.png" alt="Dresses Category" class="homecatimg">
-                                        </div>
-
-                                        <div class="homecattxtdiv">
-                                            <p class="homecattxt">
-                                                DRESSES
-                                            </p>
-                                        </div>      
-
+<!--                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
+                                <div class='homecatdiv card'>
+                                    <div class="homecatimgdiv">
+                                        <img src="../Images/productimgs/finaldressfront.png" alt="Dresses Category" class="homecatimg">
                                     </div>
+
+                                    <div class="homecattxtdiv">
+                                        <p class="homecattxt">
+                                            DRESSES
+                                        </p>
+                                    </div>      
+
                                 </div>
+                            </div>-->
 
-                                <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
-                                    <div class='homecatdiv card'>
-                                        <div class="homecatimgdiv">
-                                            <img src="../Images/productimgs/finaljacket.png" alt="Outerwear" class="homecatimg">
-                                        </div>
-
-                                        <div class="homecattxtdiv">
-                                            <p class="homecattxt">
-                                                OUTERWEAR
-                                            </p>
-                                        </div>      
-
+                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
+                                <div class='homecatdiv card'>
+                                    <div class="homecatimgdiv">
+                                        <img src="../Images/productimgs/finaljacket.png" alt="Outerwear" class="homecatimg">
                                     </div>
+
+                                    <div class="homecattxtdiv">
+                                        <p class="homecattxt">
+                                            OUTERWEAR
+                                        </p>
+                                    </div>      
+
                                 </div>
+                            </div>
 
-                                <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
-                                    <div class='homecatdiv card'>
-                                        <div class="homecatimgdiv">
-                                            <img src="../Images/productimgs/colourfulshoes.png" alt="Outerwear" class="homecatimg">
-                                        </div>
-
-                                        <div class="homecattxtdiv">
-                                            <p class="homecattxt">
-                                                SHOES
-                                            </p>
-                                        </div>      
-
+                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
+                                <div class='homecatdiv card'>
+                                    <div class="homecatimgdiv">
+                                        <img src="../Images/productimgs/colourfulshoes.png" alt="Outerwear" class="homecatimg">
                                     </div>
+
+                                    <div class="homecattxtdiv">
+                                        <p class="homecattxt">
+                                            SHOES
+                                        </p>
+                                    </div>      
+
                                 </div>
                             </div>
 
                         </div> 
-                        
-                    <div class="swiper-button-next swiper-navBtn d-flex" id="home-cat-swiper-btn-next"></div>
-                    <div class="swiper-button-prev swiper-navBtn d-flex" id="home-cat-swiper-btn-prev"></div>
-                    <div class="swiper-pagination d-block" id="home-cat-swiper-pagination"></div>
 
                 </div>
                 

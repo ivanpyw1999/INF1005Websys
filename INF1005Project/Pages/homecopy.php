@@ -53,12 +53,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         ?>
 
         <main class="homepage" id='homepage'>
-            <div class='homepagediv vh-100' id='homepagediv'>
+            <div class='homepagediv d-flex' id='homepagediv'>
                 
                 <!-- Slider for Advertisements -->
-                <div class="slide-container swiper">
+                <div class="slide-container d-flex swiper">
                     
-                    <div class="slide-content">
+                    <div class="slide-content d-flex">
                         <div class="card-wrapper swiper-wrapper">
                             
                             <!-- Nine Image Cards -->
@@ -119,9 +119,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                     </div>
                     
-                    <div class="swiper-button-next swiper-navBtn"></div>
-                    <div class="swiper-button-prev swiper-navBtn"></div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next swiper-navBtn" id="home-ad-swiper-btn-next"></div>
+                    <div class="swiper-button-prev swiper-navBtn" id="home-ad-swiper-btn-prev"></div>
+                    <div class="swiper-pagination" id="home-ad-swiper-pagination"></div>
                     
                 </div>
                 
@@ -139,18 +139,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         
                     </div>
                     
-                    <div class="homecategorywrapper h-100 flex-wrap">
+                    <div class="homecategorywrapper h-100 flex-wrap swiper">
 
                         <!-- This is the slideshow carousel-->
-                        <div class="homecatsection row " id="homecatsection">
-                            <!-- Can add div later-->
-                            
+                        <div class="homecatsection row d-flex" id="homecatsection">
+
                             <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
                                 <div class='homecatdiv card'>
                                     <div class="homecatimgdiv">
                                             <img src="../Images/productimgs/yellowshirt.png" alt="Top Category" class="homecatimg">
                                     </div>
-                                
+
                                     <div class="homecattxtdiv">
                                         <p class="homecattxt">
                                             TOP
@@ -174,7 +173,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
                                 <div class='homecatdiv card'>
                                     <div class="homecatimgdiv">
@@ -190,7 +189,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
+<!--                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
                                 <div class='homecatdiv card'>
                                     <div class="homecatimgdiv">
                                         <img src="../Images/productimgs/finaldressfront.png" alt="Dresses Category" class="homecatimg">
@@ -203,8 +202,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>      
 
                                 </div>
-                            </div>
-                            
+                            </div>-->
+
                             <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
                                 <div class='homecatdiv card'>
                                     <div class="homecatimgdiv">
@@ -219,7 +218,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
                                 <div class='homecatdiv card'>
                                     <div class="homecatimgdiv">
@@ -233,6 +232,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     </div>      
 
                                 </div>
+                            </div>
                             </div>
 
                         </div> 
