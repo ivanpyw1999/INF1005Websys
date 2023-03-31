@@ -50,9 +50,6 @@ session_start();
         }
         authenticateUser();
         if ($success) {
-            echo"<h1>Yay!</h1>";
-            echo "<h4>Welcome Back! " . $fname . " " . $lname . "</h4>";
-            echo("<button  onclick=\"location.href='../Pages/Homepage.php'\">Back to Home</button>");
             $_SESSION["username"] = $username;
             $_SESSION["member-id"] = $userid;
             $_SESSION["fname"] = $fname;
@@ -62,11 +59,10 @@ session_start();
             $_SESSION["street"] = $street;
             $_SESSION["unit"] = $unit;
             $_SESSION["postal"] = $postal;
+            header("location: ../Pages/Homepage.php");
         } else {
-            echo"<h1>Opps!</h1>";
-            echo "<h4>The following input errors were detected:</h4>";
-            echo "<p>" . $errorMsg . "</p>";
-            echo("<button  onclick=\"location.href='../Pages/login.php'\">Return to Login</button>");
+            header("location: ../Pages/login.php?message=error");
+            
         }
 
 //Helper function that checks input for malicious or unwanted content.
@@ -126,7 +122,7 @@ email=?");
         }
         ?>
     </main>
-        <?php
-        include "../Pages/footer.inc.php";
-        ?>
+    <?php
+    include "../Pages/footer.inc.php";
+    ?>
 </body>

@@ -64,7 +64,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 Log In
                             </button>
                             
-                            <?php if($_GET) echo "<div class='alert alert-danger'>".$_GET['errorMsg']."</div>"; ?>
+                            <?php if($_GET) echo "<p class='alert alert-danger'>Incorrect Password/Username</p>"; ?>
                             
                             <p class="text-center">
                                 Not a member yet? <br class="d-md-none d-lg-none"/>Register <a href="register.php">here</a>.

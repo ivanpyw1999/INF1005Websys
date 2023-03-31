@@ -55,7 +55,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="row">
                 <div class="col-12 col-md-3 px-0 px-md-3">
                     <div class="nav nav-pills d-flex flex-md-column justify-content-center" id="v-pills-tab">
-                        <a class="nav-link my-md-2 px-2 px-md-3 text-dark active" id="stats-tab" data-toggle="pill" href="#stats" role="tab" aria-controls="stats" aria-selected="true">Statistics</a>
+                        <a class="nav-link my-md-2 px-2 px-md-3 text-dark active" id="stats-tab" data-toggle="pill" href="#stats" role="tab" aria-controls="stats" aria-selected="true">DashBoard</a>
                         <a class="nav-link my-md-2 px-2 px-md-3 text-dark" id="add-product-tab" data-toggle="pill" href="#add-product" role="tab" aria-controls="add-product" aria-selected="false">Add Products</a>
                         <a class="nav-link my-md-2 px-2 px-md-3 text-dark" id="delete-product-tab" data-toggle="pill" href="#delete-product" role="tab" aria-controls="delete-product" aria-selected="false">Delete Products</a>
                         <a class="nav-link my-md-2 px-2 px-md-3 text-dark" id="modify-product-tab" data-toggle="pill" href="#modify-product" role="tab" aria-controls="modify-product" aria-selected="false">Modify Products</a>
@@ -145,7 +145,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <div class="col-lg-6 col-xxl-4 mb-5">
                                         <div class="card bg-light border-0 h-100">
                                             <div class="card-body shadow bg-white rounded-3 text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                                <h4 class="fs-4 fw-bold">Number of sales</h4>
+                                                <h4 class="fs-4 fw-bold">Total No. of sales</h4>
                                                 <p class="mb-0">
                                                     <?php
 // parse the configuration file
