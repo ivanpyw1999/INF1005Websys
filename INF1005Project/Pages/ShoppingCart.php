@@ -126,7 +126,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             $grand_total += $sub_total;
                                         }
                                         }else{
-                                          echo "No Product Added!";  
+                                            $nocart=true;
+                                          echo "No Product Added!";                                            
                                         }
                                         ?>
                                     </div>
@@ -190,14 +191,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         <div class="form-outline form-white mb-4">
                                             <label class="form-label" for="typeName">CARD NUMBER</label>
                                             <input type="text" id="typeName" class="form-control form-control-sm" size="5"
-                                                   placeholder="CARD NUMBER" />
+                                                   placeholder="CARD NUMBER"required minlength="16" maxlength="16" />
 
                                         </div>
 
                                         <div class="form-outline form-white mb-4">
                                             <label class="form-label" for="typeText">NAME ON CARD</label>
                                             <input type="text" id="typeText" class="form-control form-control-sm" size="5"
-                                                   placeholder="NAME" minlength="19" maxlength="19" />
+                                                   placeholder="NAME" required maxlength="19" />
 
                                         </div>
 
@@ -206,7 +207,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                 <div class="form-outline form-white">
                                                     <label class="form-label" for="typeExp">Expiration</label>
                                                     <input type="text" id="typeExp" class="form-control form-control-sm"
-                                                           placeholder="MM/YYYY" size="5" id="exp" minlength="7" maxlength="7" />
+                                                           placeholder="MM/YYYY" size="5" id="exp"  required minlength="7" maxlength="7" />
 
                                                 </div>
                                             </div>
@@ -215,14 +216,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                 <div class="form-outline form-white">
                                                     <label class="form-label" for="typeText">CVV</label>
                                                     <input type="password" id="typeText" class="form-control form-control-sm"
-                                                           placeholder="&#9679;&#9679;&#9679;" size="5" minlength="3" maxlength="3" />
+                                                           placeholder="&#9679;&#9679;&#9679;" size="5"  required minlength="3" maxlength="3" />
 
                                                 </div>
                                             </div>
 
                                         </div>
                                         <div class ="row mb-12">
-                                            <input type="submit" type="button" style="background-color: black" name="order_btn"  class="btn btn-secondary btn-lg btn-block" value="MAKE PAYMENT">
+                                            <input type="submit" type="button" style="background-color: black" name="order_btn"  class="btn btn-secondary btn-lg btn-block" value="MAKE PAYMENT"<?php if ($nocart) echo 'disabled'; ?>>
                                         </div>
                                     </form>
 
