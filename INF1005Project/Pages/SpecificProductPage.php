@@ -93,7 +93,7 @@ function getBestSeller() { // gets random 3 products :/
                             <p class="lead">Description:<br/>
                                 <?php echo $product['description'] ?></p>
                             <div class="d-flex">
-                                <form action="../process_addToCart.php?id=<?php echo $product['id'] ?>" method="post">
+                                <form action="process_addToCart.php?id=<?php echo $product['id'] ?>" method="post">
                                     <?php if($product['stock'] == 0 ) { ?>
                                     <button class="btn btn-outline-dark flex-shrink-0" type="button" disabled>
                                         <i class="bi-cart-fill me-1"></i>
