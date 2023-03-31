@@ -5,14 +5,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-        <div class="input-group col-lg-4">
-            <input type="text" class="form-control" placeholder="Search our products list!">
-            <div class="input-group-append">
-                <button class="btn btn-secondary" type="button">
+        <div class="input-group">
+            <form action="searchbar.php" method="post" class="d-flex">
+                <input type="text" id="searchbar" name="searchbar" class="form-control flex-fill" style="border-top-right-radius: 0px;border-bottom-right-radius: 0px" placeholder="Search our products list!">
+                <button class="btn btn-secondary flex-shrink-0" style="border-top-left-radius: 0px;border-bottom-left-radius: 0px; "type="submit">
                     <i class="fa fa-search"></i>
                 </button>
-            </div>
+            </form>
         </div>
+
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <?php
