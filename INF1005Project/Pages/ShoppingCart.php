@@ -1,12 +1,15 @@
 <?php
 session_start();
 $user_id = $_SESSION["member-id"];
+if(!isset($user_id)){
+   header('location:login.php');
+}
 if(isset($_GET['remove'])){
     $config = parse_ini_file('/var/www/private/db-config.ini');
     $conn = new mysqli($config['servername'], $config['username'],
             $config['password'], $config['dbname']);
    $remove_id = $_GET['remove'];
-   mysqli_query($conn, "DELETE FROM `order` WHERE id = '$remove_id'") or die('query failed');
+   mysqli_query($conn, "DELETE FROM `order` WHERE id = '$remove_id'") or die('<META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorHandling.php">');
    header('location:ShoppingCart.php');
 }
 if(isset($_POST['order_btn'])){
@@ -15,7 +18,7 @@ if(isset($_POST['order_btn'])){
             $config['password'], $config['dbname']);
 
     $stmt=$conn->prepare("INSERT INTO world_of_pets.orderhistory (userid, name, price, quantity, image, purchasedate, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $cart_query = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id = '$user_id'") or die('query failed');
+    $cart_query = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id = '$user_id'") or die('<META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorHandling.php">');
 // Loop through each item in the cart and insert into table
 while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
      $t=time();
@@ -92,10 +95,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                         $config = parse_ini_file('/var/www/private/db-config.ini');
                                         $conn = new mysqli($config['servername'], $config['username'],
                                                 $config['password'], $config['dbname']);
-                                        $cart_query = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id = '$user_id'") or die('query failed');
+                                        $cart_query = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id = '$user_id'") or die('<META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorHandling.php">');
+                                        if(mysqli_num_rows($cart_query) > 0){
                                         while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
-                                            ?>
-                                
+                                            ?>                                       
                                             <div class="d-flex justify-content-between">
                                                 <div class="d-flex flex-row align-items-center">
                                                     <div>
@@ -109,6 +112,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center">
+                                                    
                                                     <div style="width: 50px;">
                                                         <h5 class="fw-normal mb-0"><?php echo $fetch_cart['quantity']; ?></h5>
                                                     </div>
@@ -120,6 +124,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                             </div>
                                             <?php
                                             $grand_total += $sub_total;
+                                        }
+                                        }else{
+                                          echo "No Product Added!";  
                                         }
                                         ?>
                                     </div>
