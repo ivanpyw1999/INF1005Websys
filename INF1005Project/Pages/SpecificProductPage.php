@@ -88,51 +88,64 @@ function getBestSeller() { // gets random 3 products :/
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder"><?php echo $product['name'] ?></h1>
                         <div class="fs-5 mb-5">
-
-                            <span id="specific_price"><?php echo $product['price'] ?></span>
-                        </div>
-                        <p class="lead"><?php echo $product['description'] ?></p>
-                        <div class="d-flex">
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Add to cart
-                            </button>
+                            <p class="lead">Price: $<?php echo $product['price'] ?></p>
+                            <p class="lead">Stock: <?php echo $product['stock'] ?></p>
+                            <p class="lead">Description:<br/>
+                                <?php echo $product['description'] ?></p>
+                            <div class="d-flex">
+                                <form action="../process_addToCart.php?id=<?php echo $product['id'] ?>" method="post">
+                                    <?php if($product['stock'] == 0 ) { ?>
+                                    <button class="btn btn-outline-dark flex-shrink-0" type="button" disabled>
+                                        <i class="bi-cart-fill me-1"></i>
+                                        Out Of Stock
+                                    </button>
+                                    <?php } else { ?>
+                                    
+                                    <input id="amt" min="0" max="<?php echo $product['stock']?>" name="quantity" value="1" type="number" class="form-control form-control-sm" />
+                                    <br/>
+                                    <button class="btn btn-outline-dark flex-shrink-0" type="submit">
+                                        <i class="bi-cart-fill me-1"></i>
+                                        Add to cart
+                                    </button>
+                                    <?php } ?>
+                                </form>
+                            </div>
                         </div>
                     </div>
+
+
+                    <section class="bg-white">
+                        <div class="text-center container py-5">
+                            <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
+
+                            <div class="row">
+
+                                <?php
+                                $products = getBestSeller();
+
+                                foreach ($products as $product) {
+                                    ?>
+                                    <div class="col-lg-4 col-md-6 mb-4">
+
+                                        <a href="<?php echo 'SpecificProductPage.php?id=' . $product['id'] ?>" class="text-reset">
+                                            <div style="height: 100%" class="card">
+                                                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                                     data-mdb-ripple-color="light">
+                                                    <img src="<?php echo $product['image'] ?>"
+                                                         class="w-100" />
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-3"><?php echo $product['name'] ?></h5>
+                                                    <h6 class="mb-3"><?php echo $product['price'] ?></h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-
-
-                <section class="bg-white">
-                    <div class="text-center container py-5">
-                        <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
-
-                        <div class="row">
-
-                            <?php
-                            $products = getBestSeller();
-
-                            foreach ($products as $product) {
-                                ?>
-                                <div class="col-lg-4 col-md-6 mb-4">
-
-                                    <a href="<?php echo 'SpecificProductPage.php?id=' . $product['id'] ?>" class="text-reset">
-                                        <div style="height: 100%" class="card">
-                                            <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-                                                 data-mdb-ripple-color="light">
-                                                <img src="<?php echo $product['image'] ?>"
-                                                     class="w-100" />
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-3"><?php echo $product['name'] ?></h5>
-                                                <h6 class="mb-3"><?php echo $product['price'] ?></h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </section>
             </div>
 
         </main>
