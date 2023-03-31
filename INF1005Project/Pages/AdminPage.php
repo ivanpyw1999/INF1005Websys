@@ -1,11 +1,9 @@
 
 <?php
 session_start();
-if ($_SESSION["member-id"] != '1') {
-    echo "<script>
-    alert('Sorry, you are not an Admin');
-    window.location.href='Homepage.php';
-</script>";
+if($_SESSION["member-id"]!='1'){
+    header("Location: ErrorHandling.php");
+    exit();
 }
 ?>
 
