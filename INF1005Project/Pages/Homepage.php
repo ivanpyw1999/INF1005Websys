@@ -1,4 +1,3 @@
-<?php session_start()?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -6,12 +5,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html lang="en">
     <head>
+        <!-- Custom Bootstrap -->
         <link rel="stylesheet"
               href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
               integrity=
               "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
 
+        <!-- Custom CSS -->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="../css/homepage.css">
 
@@ -21,17 +22,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
                 crossorigin="anonymous">
         </script>
+
         <!--Bootstrap JS-->
         <script defer
                 src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
                 integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
                 crossorigin="anonymous">
         </script>
+
         <!-- Custom JS -->
         <script src="https://kit.fontawesome.com/926cf4293a.js" crossorigin="anonymous"></script>
         <script defer src="../js/main.js"></script>
         <script defer src="../js/homepage.js"></script>
-       
+
+        <!-- CSS and JS for Swiper JS-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+        <!-- Custom Bootstrap -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
         <title>FastFash</title>
@@ -45,152 +53,190 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         ?>
 
         <main class="homepage" id='homepage'>
-            <div class='homepagediv vh-100' id='homepagediv'>
-                
-                <!-- This is the wrapper-->
-                <div class="homeaddiv">
-                    <div class="adcarouselbtndiv" id="adleft">
-                        <i class="bi bi-arrow-left-short adcarouselbtn" ></i>
-                    </div>
-                    
-                    <!-- This is the slideshow carousel-->
-                    <div class="homeadcarousel" id="homeadcarousel">
-                        <!-- Can add div later-->
-                        <img src="../Images/homeadvertv2small.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertgreensmall.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/adplaceholder1.jpg" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/adplaceholder2.jpg" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/adplaceholder3.jpg" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/adplaceholder4.jpg" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/homeadvertv2.png" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/adplaceholder5.jpg" alt="Advertisement" class="homeadimg">
-                        <img src="../Images/adplaceholder6.jpg" alt="Advertisement" class="homeadimg">
-                        
-                    </div>
-                    <div class="adcarouselbtndiv" id="adright">
-                        <i class="bi bi-arrow-right-short adcarouselbtn" ></i>
-                    </div>
-                    
-              
-                </div>
-                
-                
-                <div class="homecatsdiv">
-                    
-                    <div class='homecatheaderdiv'>
-                        
-                        <div class="homecatheader">
-                            <p class="homecattitle">CATEGORIES</p>
+
+            <div class='homepagediv d-flex' id='homepagediv'>
+
+                <!-- Slider for Advertisements -->
+                <div class="slide-container d-flex swiper">
+
+                    <div class="slide-content d-flex">
+                        <div class="card-wrapper swiper-wrapper">
+
+                            <!-- Nine Image Cards -->
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/firstad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/secondad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/thirdad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/fourthad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/fifthad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/sixthad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/seventhad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/eighthad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
+                            <div class="card d-flex swiper-slide">
+                                <div class="image-content home-ad-image-div">
+                                    <img src="../Images/advertisements/ninthad.png" alt="Advertisement" class="homeadimg">
+                                </div>
+                            </div>
+
                         </div>
-                        
-                        <div class="homecatbtndiv">
-                            <a class="homecatbtn" href="../Pages/ProductList.php">View All Categories</a>
-                        </div>
-                        
                     </div>
-                    
-                    <div class="homecategorywrapper">
 
-                        <div class="catcarouselbtndiv" id="catleft">
-                            <i class="bi bi-arrow-left-short catcarouselbtn" ></i>
-                        </div>
-
-                        <!-- This is the slideshow carousel-->
-                        <div class="homecatcarousel" id="homecatcarousel">
-                            <!-- Can add div later-->
-
-                            <div class='homecatdiv'>
-                                <div class="homecatimgdiv">
-                                        <img src="../Images/categories/pinktop.png" alt="Advertisement" class="homecatimg">
-                                </div>
-
-                                <div class="homecattxtdiv">
-                                    <p class="homecattxt">
-                                        TOP
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div class='homecatdiv'>
-                                <div class="homecatimgdiv">
-                                        <img src="../Images/categories/pantsfront.png" alt="Advertisement" class="homecatimg">
-                                </div>
-
-                                <div class="homecattxtdiv">
-                                    <p class="homecattxt">
-                                        BOTTOM
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div class='homecatdiv'>
-                                <div class="homecatimgdiv">
-                                        <img src="../Images/categories/jeansfront.png" alt="Advertisement" class="homecatimg">
-                                </div>
-
-                                <div class="homecattxtdiv">
-                                    <p class="homecattxt">
-                                        JEANS
-                                    </p>
-                                </div>
-
-                            </div>
-
-
-                            <div class='homecatdiv'>
-                                <div class="homecatimgdiv">
-                                        <img src="../Images/categories/dressfront.png" alt="Advertisement" class="homecatimg">
-                                </div>
-
-                                <div class="homecattxtdiv">
-                                    <p class="homecattxt">
-                                        DRESSES
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div class='homecatdiv'>
-                                <div class="homecatimgdiv">
-                                        <img src="../Images/categories/jacket.png" alt="Advertisement" class="homecatimg">
-                                </div>
-
-                                <div class="homecattxtdiv">
-                                    <p class="homecattxt">
-                                        OUTERWEAR
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div class='homecatdiv'>
-                                <div class="homecatimgdiv">
-                                        <img src="../Images/categories/nikeshoe.png" alt="Advertisement" class="homecatimg">
-                                </div>
-
-                                <div class="homecattxtdiv">
-                                    <p class="homecattxt">
-                                       SHOES
-                                    </p>
-                                </div>
-
-                            </div>
-
-
-
-                        </div> 
-
-                        <div class="catcarouselbtndiv" id="catright">
-                            <i class="bi bi-arrow-right-short catcarouselbtn" ></i>
-                        </div>
-
+                    <div class="swiper-button-next swiper-navBtn" id="home-ad-swiper-btn-next"></div>
+                    <div class="swiper-button-prev swiper-navBtn" id="home-ad-swiper-btn-prev"></div>
+                    <div class="swiper-pagination" id="home-ad-swiper-pagination"></div>
 
                 </div>
-                
-            </div>
-            
+
+
+
+                <div class='homecatheaderdiv'>
+
+                    <div class="homecatheader">
+                        <p class="homecattitle">Categories</p>
+                    </div>
+
+                    <div class="homecatsbtndiv">
+                        <a class="homecatsbtn" href="../Pages/ProductList.php">View All Categories</a>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="col-sm-4 col-md-4 col-lg-4 ">
+                        <div class='homecatdiv card'>
+                            <div class="homecatimgdiv">
+                                <img src="../Images/productimgs/yellowshirt.png" alt="Top Category" class="homecatimg">
+                            </div>
+
+                            <div class="homecattxtdiv">
+                                <p class="homecattxt">
+                                    TOP
+                                </p>
+                            </div>        
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-md-4 col-lg-4 ">
+                        <div class='homecatdiv card'>
+                            <div class="homecatimgdiv">
+                                <img src="../Images/productimgs/finalpantsfront.png" alt="Bottom Category" class="homecatimg">
+                            </div>
+
+                            <div class="homecattxtdiv">
+                                <p class="homecattxt">
+                                    BOTTOM
+                                </p>
+                            </div>      
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-md-4 col-lg-4 ">
+                        <div class='homecatdiv card'>
+                            <div class="homecatimgdiv">
+                                <img src="../Images/productimgs/manyjeans.png" alt="Jeans Category" class="homecatimg">
+                            </div>
+
+                            <div class="homecattxtdiv">
+                                <p class="homecattxt">
+                                    JEANS
+                                </p>
+                            </div>      
+
+                        </div>
+                    </div>
+
+                </div>
+                <br
+
+                <div class ="row">
+
+
+                    <div class="col-sm-6 col-md-6 col-lg-6 ">
+                        <div class='homecatdiv card'>
+                            <div class="homecatimgdiv">
+                                <img src="../Images/productimgs/finaljacket.png" alt="Outerwear" class="homecatimg">
+                            </div>
+
+                            <div class="homecattxtdiv">
+                                <p class="homecattxt">
+                                    OUTERWEAR
+                                </p>
+                            </div>      
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-6 ">
+                        <div class='homecatdiv card'>
+                            <div class="homecatimgdiv">
+                                <img src="../Images/productimgs/colourfulshoes.png" alt="Outerwear" class="homecatimg">
+                            </div>
+
+                            <div class="homecattxtdiv">
+                                <p class="homecattxt">
+                                    SHOES
+                                </p>
+                            </div>      
+
+                        </div>
+                    </div>
+
+                </div> 
+
+
+
+
         </main>
 
 

@@ -4,7 +4,7 @@
         <!--Grid row-->
         <div class="row mt-4">
             <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
                 <h5 class="text-uppercase">Reach out to us</h5>
 
                 <ul class="list-unstyled mb-0">
@@ -17,7 +17,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
                 <h5 class="text-uppercase">Find out more</h5>
 
                 <ul class="list-unstyled">
@@ -29,18 +29,7 @@
             </div>
             <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Publishing house</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!" class="text-white">The BookStore</a>
-                    </li>
-
-                </ul>
-            </div>
-            <!--Grid column-->
+            
 
           
         </div>
