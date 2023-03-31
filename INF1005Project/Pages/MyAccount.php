@@ -330,5 +330,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         include "footer.inc.php";
         ?>
 
-    </body>z
+    </body>
 </html>
