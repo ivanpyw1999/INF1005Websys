@@ -107,6 +107,7 @@ function getBestSeller() { // gets random 3 products :/
                                         <i class="bi-cart-fill me-1"></i>
                                         Add to cart
                                     </button>
+                                    
                                     <?php } ?>
                                 </form>
                             </div>
