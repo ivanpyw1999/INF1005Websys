@@ -139,7 +139,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         
                     </div>
                     
-                    <div class="homecategorywrapper h-100 flex-wrap">
+                    <div class="homecategorywrapper h-100 flex-wrap container">
 
                         <!-- This is the slideshow carousel-->
                         <div class="homecatsection row flex-wrap" id="homecatsection">
@@ -189,20 +189,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 </div>
                             </div>
 
-<!--                            <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
-                                <div class='homecatdiv card'>
-                                    <div class="homecatimgdiv">
-                                        <img src="../Images/productimgs/finaldressfront.png" alt="Dresses Category" class="homecatimg">
-                                    </div>
-
-                                    <div class="homecattxtdiv">
-                                        <p class="homecattxt">
-                                            DRESSES
-                                        </p>
-                                    </div>      
-
-                                </div>
-                            </div>-->
 
                             <div class="col-sm-6 col-md-4 col-lg-3 catdivwrapper">
                                 <div class='homecatdiv card'>
